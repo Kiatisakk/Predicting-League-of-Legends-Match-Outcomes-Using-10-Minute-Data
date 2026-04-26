@@ -51,13 +51,13 @@ Run the setup script to automatically download and extract the data:
 python setup_data.py
 ```
 
-This will download the dataset from [Kaggle: cpe232-lol-10min-dataset](https://kaggle.com/datasets/aad3d8f8123bb41ffa8e0d829eea42c051c7c139a1ff6d510b2edde3e74886e6) into the `data/` folder.
+This will download the dataset from [Kaggle: cpe232-lol-10min-dataset](https://www.kaggle.com/datasets/kiatisakkk/cpe232-lol-10min-dataset) into the `data/` folder.
 
 ### Manual Download (Alternative)
 
 If the script doesn't work, you can download manually:
 
-1. Visit [https://kaggle.com/datasets/aad3d8f8123bb41ffa8e0d829eea42c051c7c139a1ff6d510b2edde3e74886e6](https://kaggle.com/datasets/aad3d8f8123bb41ffa8e0d829eea42c051c7c139a1ff6d510b2edde3e74886e6)
+1. Visit [https://www.kaggle.com/datasets/kiatisakkk/cpe232-lol-10min-dataset](https://www.kaggle.com/datasets/kiatisakkk/cpe232-lol-10min-dataset)
 2. Click **"Download"** button
 3. Extract the ZIP file into the `data/` folder of this project
 

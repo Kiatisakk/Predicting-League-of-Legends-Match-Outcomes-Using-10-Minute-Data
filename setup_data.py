@@ -21,8 +21,8 @@ def main():
     print(f"เตรียมโฟลเดอร์สำหรับเก็บข้อมูลที่: {data_dir}")
 
     # 3. ดาวน์โหลดและแตกไฟล์จาก Kaggle
-    dataset_url = "https://kaggle.com/datasets/aad3d8f8123bb41ffa8e0d829eea42c051c7c139a1ff6d510b2edde3e74886e6"
-    dataset_name = "https://kaggle.com/datasets/aad3d8f8123bb41ffa8e0d829eea42c051c7c139a1ff6d510b2edde3e74886e6"
+    dataset_url = "https://www.kaggle.com/datasets/kiatisakkk/cpe232-lol-10min-dataset"
+    dataset_name = "kiatisakkk/cpe232-lol-10min-dataset"
     print(f"\nกำลังดาวน์โหลดข้อมูลจาก Kaggle...")
     print(f"URL: {dataset_url}")
     print("(ต้องแน่ใจว่าคุณได้ตั้งค่าไฟล์ kaggle.json ไว้ที่ C:\\Users\\<YourUsername>\\.kaggle\\kaggle.json แล้ว)\n")
