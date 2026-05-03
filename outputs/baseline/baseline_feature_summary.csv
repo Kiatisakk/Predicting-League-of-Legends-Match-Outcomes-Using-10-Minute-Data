@@ -1,0 +1,7 @@
+item,value
+Rows,91394
+Raw feature count before encoding,141
+Categorical columns encoded,11
+Feature count after encoding,185
+Model,LogisticRegression
+Feature engineering,None

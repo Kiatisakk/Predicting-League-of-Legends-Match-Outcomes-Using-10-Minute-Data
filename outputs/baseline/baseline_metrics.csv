@@ -1,0 +1,2 @@
+Feature_Set,Model,Val_Accuracy,Val_AUC,Val_F1,Test_Accuracy,Test_AUC,Test_F1,Feature_Count
+Raw encoded features / no feature engineering,LogisticRegression,0.6988110000729448,0.7756030169310217,0.6958379373848987,0.7052516411378555,0.7828129687065344,0.7027583670467084,185

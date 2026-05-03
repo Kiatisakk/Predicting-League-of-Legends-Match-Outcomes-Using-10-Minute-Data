@@ -1,0 +1,7 @@
+,max_depth,min_samples_leaf,max_features,n_estimators,max_samples,learning_rate,subsample,colsample_bytree,min_child_weight,reg_lambda,num_leaves,min_child_samples,depth,l2_leaf_reg,random_strength
+LogisticRegression,,,,,,,,,,,,,,,
+DecisionTree,6.0,12.0,,,,,,,,,,,,,
+RandomForest,15,10,sqrt,300,0.75,,,,,,,,,,
+XGBoost,3.0,,,,,0.14008337046705713,0.6000482321625022,0.8278283884527579,12.0,0.4844607636773928,,,,,
+LightGBM,3.0,,,,,0.1265906586674903,0.8027571953745802,0.8246351194425259,,0.4172804247815935,73.0,56.0,,,
+CatBoost,,,,,,0.09737496385776301,,,,,,,4.0,6.666565895134378,0.22621659130405997
