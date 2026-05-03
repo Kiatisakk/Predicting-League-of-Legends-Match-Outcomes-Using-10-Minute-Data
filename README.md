@@ -32,6 +32,7 @@
 - [Project Structure](#-project-structure)
 - [Getting Started](#-getting-started)
 - [Kaggle Notebooks](#-kaggle-notebooks)
+- [Related Repository — Data Collection](#-related-repository--data-collection)
 
 ---
 
@@ -58,14 +59,16 @@
 
 - **แหล่งข้อมูล:** [Kaggle — cpe232-lol-10min-dataset](https://www.kaggle.com/datasets/kiatisakkk/cpe232-lol-10min-dataset)
 - **ระดับข้อมูล:** Match-level (หนึ่งแถวต่อหนึ่งเกม) หลังจาก merge จาก raw tables
+- **Data Collection:** ข้อมูลถูก crawl จาก **Riot Games API** ด้วย [LOL-10minutesDataCollection](https://github.com/thhanabun/LOL-10minutesDataCollection) ซึ่งเก็บข้อมูลช่วง 10 นาทีแรกของแต่ละเกม แล้ว export จาก MySQL เป็น CSV
+- **Patch ที่เก็บข้อมูล:** `16.4`, `16.5`, `16.6`
 - **Raw Tables:**
 
 | Table | คำอธิบาย |
 |---|---|
-| `MatchTbl.csv` | ข้อมูลทั่วไปของแมตช์ |
-| `MatchStatsTbl.csv` | สถิติรายละเอียดของแมตช์ |
+| `MatchTbl.csv` | ข้อมูลทั่วไปของแมตช์ (patch, queue type, duration) |
+| `MatchStatsTbl.csv` | สถิติรายผู้เล่น ณ นาทีที่ 10 (CS, gold, damage, KDA, items, runes) |
 | `SummonerMatchTbl.csv` | ข้อมูลผู้เล่นแต่ละคนในแมตช์ |
-| `TeamMatchTbl.csv` | ข้อมูลระดับทีม |
+| `TeamMatchTbl.csv` | ข้อมูลระดับทีม (champion composition, objectives, win result) |
 | `ChampionTbl.csv` | ข้อมูล champion metadata |
 | `KeystoneTbl.csv` | ข้อมูล keystone rune |
 | `SummonerSpellTbl.csv` | ข้อมูล summoner spell |
@@ -95,16 +98,27 @@
 
 ```mermaid
 graph TD
-    A[📥 Raw CSV Tables<br/>data/t1_raw/] --> B[01 Data Merging<br/>รวมข้อมูลผู้เล่น + ทีม]
-    B --> C[📄 merged_v1.csv<br/>data/t2_transformed/]
-    C --> D[02 EDA<br/>สำรวจ signal สำคัญ]
-    D --> E[03 Baseline<br/>Logistic Regression]
-    D --> F[04 Aggregate-only<br/>6 Models + Tuning]
-    D --> G[05 All-features<br/>6 Models + Tuning]
-    E --> H[06 Result Summary<br/>สรุปผลข้าม experiments]
+    R["🎮 Riot Games API"] --> CR["🕷️ match_crawler.py<br/>(LOL-10minutesDataCollection)"]
+    CR --> DB["🗄️ MySQL Database<br/>LeagueStats"]
+    DB --> EX["📤 export_csv.py<br/>Export to CSV"]
+    EX --> K["☁️ Kaggle Dataset"]
+    K --> A["📥 Raw CSV Tables<br/>data/t1_raw/"]
+
+    A --> B["01 Data Merging<br/>รวมข้อมูลผู้เล่น + ทีม"]
+    B --> C["📄 merged_v1.csv<br/>data/t2_transformed/"]
+    C --> D["02 EDA<br/>สำรวจ signal สำคัญ"]
+    D --> E["03 Baseline<br/>Logistic Regression"]
+    D --> F["04 Aggregate-only<br/>6 Models + Tuning"]
+    D --> G["05 All-features<br/>6 Models + Tuning"]
+    E --> H["06 Result Summary<br/>สรุปผลข้าม experiments"]
     F --> H
     G --> H
-    H --> I[📊 outputs/final_summary/]
+    H --> I["📊 outputs/final_summary/"]
+
+    style R fill:#1a1a2e,color:#e94560,stroke:#e94560
+    style CR fill:#16213e,color:#0f3460,stroke:#0f3460
+    style DB fill:#0f3460,color:#e94560,stroke:#e94560
+    style K fill:#533483,color:#fff,stroke:#533483
 ```
 
 ---
@@ -201,6 +215,15 @@ graph TD
 ├── 📄 Criteria.html                      # เกณฑ์การให้คะแนนโปรเจค
 ├── 📄 .gitignore
 │
+├── 📁 data_collection/                    # 🔗 โค้ด Data Collection จาก Riot API
+│   ├── 📄 match_crawler.py               # สคริปต์หลักสำหรับ crawl match data
+│   ├── 📄 RiotApiCalls.py                # Riot API helper functions
+│   ├── 📄 databaseQuries.py              # MySQL database helper functions
+│   ├── 📄 championsRequest.py            # Champion, item, rune helpers
+│   ├── 📄 export_csv.py                  # Export MySQL tables → CSV
+│   ├── 📄 TableSetupNoData.txt           # SQL schema + seed data
+│   └── 📄 config.py                      # ⚠️ Riot API key (ไม่ track ใน git)
+│
 ├── 📁 data/
 │   ├── 📁 t1_raw/                        # Raw CSV tables จาก Kaggle
 │   │   ├── 📁 match_details/             # MatchTbl, MatchStatsTbl, SummonerMatchTbl, TeamMatchTbl
@@ -277,6 +300,52 @@ jupyter notebook
 |---|---|
 | Aggregate-Only Modeling | [🔗 เปิดบน Kaggle](https://www.kaggle.com/code/flamelyy1337/notebook7b3fd4e470) |
 | All / Combined Features Modeling | [🔗 เปิดบน Kaggle](https://www.kaggle.com/code/kiatisakkk/notebooke42f10f3ea) |
+
+---
+
+## 🔗 Related Repository — Data Collection
+
+| | |
+|---|---|
+| **Source** | [thhanabun/LOL-10minutesDataCollection](https://github.com/thhanabun/LOL-10minutesDataCollection) |
+| **Location** | `data_collection/` (รวมไว้ใน repo นี้แล้ว) |
+| **จุดประสงค์** | Crawl ข้อมูลแมตช์ League of Legends จาก Riot Games API และเก็บลง MySQL |
+| **ความสัมพันธ์** | เป็น **upstream pipeline** ที่สร้างข้อมูลดิบ (raw CSV) ที่ใช้ใน repo นี้ |
+
+### Data Collection ทำอะไรบ้าง
+
+สคริปต์หลัก `match_crawler.py` ทำงานดังนี้:
+
+1. เริ่มจาก seed Match ID หนึ่งรายการ
+2. ดึงข้อมูล match + timeline จาก **Riot API** (`sea.api.riotgames.com`)
+3. บันทึกเฉพาะ match ที่อยู่ใน patch `16.4`, `16.5`, `16.6` ลง **MySQL**
+4. ค้นหา match ใหม่โดย sampling PUUIDs จาก match ที่ประมวลผลแล้ว
+5. Export ข้อมูลจาก MySQL เป็น CSV ด้วย `export_csv.py`
+
+### ข้อมูลที่เก็บ (ช่วง 10 นาทีแรก)
+
+| หมวด | รายละเอียด |
+|---|---|
+| **Champion** | Champion IDs ของผู้เล่นทั้ง 10 คน |
+| **Match Info** | Patch, game mode, duration, Blue/Red win |
+| **Team Objectives** | Kills, dragons, rift herald/voidgrubs, towers ของแต่ละทีม |
+| **Player Stats @10min** | CS, gold, damage dealt, damage taken |
+| **KDA Events** | Kills, deaths, assists ในช่วง 10 นาทีแรก |
+| **Setup** | Items, summoner spells, runes, lane, enemy lane champion |
+
+### ไฟล์ใน `data_collection/`
+
+| ไฟล์ | คำอธิบาย |
+|---|---|
+| `match_crawler.py` | สคริปต์หลักสำหรับ crawl ข้อมูล |
+| `RiotApiCalls.py` | Riot API helper functions |
+| `databaseQuries.py` | MySQL database helper functions |
+| `championsRequest.py` | Champion, item, rune helper functions |
+| `export_csv.py` | Export ข้อมูลจาก MySQL เป็น CSV |
+| `TableSetupNoData.txt` | SQL script สำหรับสร้าง schema และ seed data |
+| `config.py` | ⚠️ ไฟล์ Riot API key (ต้องสร้างเอง, ไม่ track ใน git) |
+
+> 💡 ข้อมูลที่ crawl ได้ถูก export เป็น CSV แล้วอัปโหลดขึ้น [Kaggle Dataset](https://www.kaggle.com/datasets/kiatisakkk/cpe232-lol-10min-dataset) เพื่อใช้ใน modeling pipeline ของ repo นี้
 
 ---
 

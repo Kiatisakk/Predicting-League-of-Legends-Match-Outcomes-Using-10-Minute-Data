@@ -3,3 +3,4 @@ __pycache__/
 .env
 *.zip
 catboost_info/
+data_collection/config.py
