@@ -1,74 +1,239 @@
-## League of Legends Relational Database for Match Prediction
+# LOL 10-Minute Data Collection
 
-### Context
+This project collects League of Legends match data from the Riot Games API, focusing on the first 10 minutes of each game. The collected data is stored in a MySQL database and can be used for analysis or machine learning tasks such as early-game win prediction.
 
-This dataset contains detailed match and player data from League of Legends, one of the most popular multiplayer online battle arena (MOBA) games in the world. It includes 35,000 matches and contains 78,000 summoner statistics, capturing a wide range of in-game statistics, such as champion selection, player performance metrics, match outcomes, and more.
+The main script for the current workflow is `match_crawler.py`.
 
-The dataset is structured to support a variety of analyses, including:
+## What the Collector Does
 
-- Predicting match outcomes based on team compositions and player stats
-- Evaluating player performance and progression over time
-- Exploring trends in champion popularity and win rates
-- Building machine learning models for esports analytics
+`match_crawler.py` starts from one seed Match ID, fetches match and timeline data from Riot API, saves valid matches into MySQL, then discovers more matches by sampling player PUUIDs from processed games.
 
-Whether you are interested in competitive gaming, data science, or predictive modeling, this dataset provides a rich source of structured data to explore the dynamics of League of Legends at scale.
+The collector stores:
 
-### Dataset Information
+- Champions for all 10 players
+- Patch, game mode, and game duration
+- Blue/Red team win result
+- Team objectives during the first 10 minutes, including kills, dragons, rift herald/voidgrubs, and towers
+- Player stats at minute 10, including CS, gold, damage dealt, and damage taken
+- KDA events from the first 10 minutes
+- Items, summoner spells, runes, lane, and enemy lane champion
 
-Data was collected from Riot Games API using Python script(link) from Patch 25.19 
+The current crawler only saves matches from these patches:
 
-The datase consists of 7 csv files:
-
-- **MatchStatsTbl** - Match Stats given a summonerID and MatchID.Contains K/D/A, Items, Runes,Ward Score, Summoner Spells, Baron Kills, Dragon Kills, Lane, DmgTaken/Dealt, Total Gold, cs,Mastery Points and Win/Loss
-- **TeamMatchStatsTbl** - Containes Red/Blue Champions,Red/Blue BaronKills,Blue/Red Turret Kills, Red/Blue Kills, RiftHearaldKills and Win/loss
--**MatchTbl**- Contains MatchID,Rank,Match Duration and MatchType.
--**RankTbl **- Contains RankID and RankName
--**ChampionTbl**- Contains ChampionID and ChampionName 
--**ItemTbl** - Contains ItemID,ItemName and ItemLink(Image) 
--**SummonerTbl** - Contains SummonerID and SummonerName
--**SummonerMatchTbl** - Links MatchID,SummonerID and ChampionID
-
-### Database Features
-
-- This dataset contains 35,422 League of Legends matches and 78,863 summoner statistics from those games.
-- Uses Data from over 2,381 summoners.
-- Consists of data only from Europe West(EUW)
-- Data is sampled from Unranked to Challenger tiers.
-
-### Limitations
-
-The Riot API only provides the "BOTTOM" lane for bot-lane players.
-During Data collection, roles were inferred by combining chapions that often played support with CS metrics to distinguish ADC vs Support — especially for ambiguous picks like Senna or off-meta choices.
-
-### Acknowledgements/Privacy
-
-Data is collected using the official Riot Games API. We thank Riot Games for providing the data and tools that make this project possible. This dataset is not endorsed or certified by Riot Games.
-No personal or identifiable player data (e.g., Summoner Names, Summoner IDs, or PUUIDs) are included.
-The SummonerTbl has been intentionally excluded from this public release.
-
-### Running the Database
-
-```
-mysql -u league_user -pmysql -u league_user -p
-USE LeagueStats;
+```python
+("16.4", "16.04", "16.5", "16.05", "16.6", "16.06")
 ```
 
-Copy and Paste the 'TableSetupNoData.txt' script into the terminal, Then open the CollectSummoner.py file and enter a summoner name (Line 56, seen below) and run the script which will populate a text file. After this run the DataCollection.py Script to start populating the database.
+## Repository Files
+
+Required files for running the crawler:
+
+- `match_crawler.py` - main crawler script
+- `config.py` - local Riot API key file, created manually and ignored by Git
+- `databaseQuries.py` - database helper functions from the original project structure
+- `RiotApiCalls.py` - Riot API helper functions from the original project structure
+- `championsRequest.py` - champion, item, and rune helper functions from the original project structure
+- `TableSetupNoData.txt` - SQL script for creating the database schema and seed lookup data
+
+Optional files:
+
+- `export_csv.py` - exports MySQL tables to CSV files
+- `ItemsGen.py` - helper script for generating item data
+- `DataCollection.py` and `collect_summoners.py` - older collection pipeline from the original project, not the main workflow in this version
+
+## Requirements
+
+- Python 3.10+
+- MySQL Server
+- Riot Games API key
+- Python packages:
+
+```bash
+pip install requests mysql-connector-python pandas
+```
+
+`pandas` is still listed because some imported helper files require it, even though `match_crawler.py` does not directly use it.
+
+## Setup
+
+### 1. Create a Riot API Config File
+
+Create a file named `config.py` in the project root:
+
+```python
+api_key = "RGAPI-your-api-key-here"
+```
+
+Do not commit `config.py` to GitHub. It contains your Riot API key and should stay local.
+
+The `.gitignore` should include:
+
+```gitignore
+config.py
+.env
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+```
+
+### 2. Install Python Dependencies
+
+Optional virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+pip install requests mysql-connector-python pandas
+```
+
+### 3. Database Setup
+
+The crawler expects a MySQL database named `LeagueStats` and a MySQL user matching the credentials currently hardcoded in `match_crawler.py`:
+
+```python
+config = {
+    "user": "league_user",
+    "password": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "database": "LeagueStats",
+    "buffered": True,
+    "auth_plugin": "mysql_native_password",
+}
+```
+
+Run the database schema script as a MySQL admin/root user:
+
+```bash
+mysql -u root -p < TableSetupNoData.txt
+```
+
+This creates:
+
+- `LeagueStats` database
+- Core tables used by the crawler
+- Lookup/seed data for ranks, champions, items, keystones, and summoner spells
+
+Then create the MySQL user used by the Python scripts:
+
+```bash
+mysql -u root -p
+```
+
+Inside the MySQL shell:
+
+```sql
+CREATE USER IF NOT EXISTS 'league_user'@'localhost' IDENTIFIED BY 'mysql';
+GRANT ALL PRIVILEGES ON LeagueStats.* TO 'league_user'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+Verify that the crawler user can access the database:
+
+```bash
+mysql -u league_user -pmysql LeagueStats
+```
+
+Useful verification queries:
+
+```sql
+SHOW TABLES;
+SELECT COUNT(*) FROM ChampionTbl;
+SELECT COUNT(*) FROM ItemTbl;
+SELECT COUNT(*) FROM RankTbl;
+```
+
+### 4. Choose a Starting Match ID
+
+Edit the seed Match ID at the bottom of `match_crawler.py`:
 
 ```python
 if __name__ == "__main__":
-    start_summoner_name = ""
-    region_start = "europe"
-    tagline = "EUW "
-    output_file = "summoner_names.txt"
-    collect_summoner_names(start_summoner_name, region_start, tagline, output_file)
+    crawl_pipeline("SG2_139856327")
 ```
-## Find the Dataset on [Kaggle](https://www.kaggle.com/datasets/nathansmallcalder/lol-match-history-and-summoner-data-80k-matches)
 
-## Config File
+Replace `"SG2_139856327"` with the match ID you want to start from.
 
-to run the project you will need a Riot Games API Key then create a config.py file.
+### 5. Run the Crawler
 
-```python
-api_key = "RGAPI"
+```bash
+python match_crawler.py
 ```
+
+If Riot API rate limits the request, the crawler sleeps and retries the same match.
+
+## Database Tables
+
+Main tables written by the crawler:
+
+- `MatchTbl` - Match ID, patch, queue type, rank ID, and game duration
+- `TeamMatchTbl` - Blue/Red champion composition and team objectives from the first 10 minutes
+- `SummonerUserTbl` - Summoner names
+- `SummonerMatchTbl` - Relationship between summoners, matches, and champions
+- `MatchStatsTbl` - Player-level minute-10 stats and first-10-minute event stats
+
+Lookup tables:
+
+- `ChampionTbl` - Champion ID and champion name
+- `ItemTbl` - Item ID and item name
+- `KeystoneTbl` - Rune keystone ID, keystone name, and tree name
+- `RankTbl` - Rank ID and rank name
+- `SummonerSpellTbl` - Summoner spell ID and spell name
+
+## Data Fields
+
+`TeamMatchTbl` stores one row per match with:
+
+- Blue and Red team champion IDs
+- Blue/Red kills
+- Blue/Red dragons
+- Blue/Red rift herald or voidgrub count
+- Blue/Red tower kills
+- Blue/Red win result
+
+`MatchStatsTbl` stores one row per player per match with:
+
+- CS at minute 10
+- Damage dealt and damage taken at minute 10
+- Total gold at minute 10
+- Lane and inferred support role
+- Win result
+- Items, summoner spells, and runes
+- Kills, deaths, assists during the first 10 minutes
+- Dragon and baron kills during the first 10 minutes
+- Enemy lane champion
+- Vision score
+
+## Export Data to CSV
+
+To export tables from MySQL into CSV files:
+
+```bash
+python export_csv.py
+```
+
+CSV files are written to:
+
+```text
+League_CSV_Export/
+```
+
+## Notes and Limitations
+
+- The crawler currently uses `sea.api.riotgames.com` and is configured around `SG2_...` match IDs.
+- Most values in `MatchStatsTbl` are based on the first 10 minutes, but `visionScore` currently comes from the full match summary.
+- `TurretDmgDealt` is currently saved as `0`.
+- `RankFk` is currently fixed as `1` in `match_crawler.py`.
+- Support role is inferred from champion ID and CS because Riot API often reports both bot-lane players as `BOTTOM`.
+- Riot development API keys expire, so `config.py` may need to be updated regularly.
+
+## Riot Games API Notice
+
+This project uses the Riot Games API. This project is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties.

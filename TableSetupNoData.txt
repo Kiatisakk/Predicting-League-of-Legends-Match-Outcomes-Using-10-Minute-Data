@@ -1,67 +1,75 @@
-CREATE DATABASE LeagueStats;
+CREATE DATABASE IF NOT EXISTS LeagueStats;
 USE LeagueStats;
 
 CREATE TABLE `ChampionTbl` (
-  `ChampionId` int(11) NOT NULL,
+  `ChampionId` int NOT NULL,
   `ChampionName` varchar(100) NOT NULL,
   PRIMARY KEY (`ChampionId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `ItemTbl` (
-  `ItemID` int(11) NOT NULL,
+  `ItemID` int NOT NULL,
   `ItemName` mediumtext NOT NULL,
+  `ItemLink` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ItemID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `KeystoneTbl` (
+  `KeystoneId` int NOT NULL,
+  `KeystoneName` varchar(50) NOT NULL,
+  `TreeName` varchar(50) NOT NULL,
+  PRIMARY KEY (`KeystoneId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `MatchStatsTbl` (
-  `MatchStatsId` int(11) NOT NULL AUTO_INCREMENT,
-  `SummonerMatchFk` int(11) NOT NULL,
-  `MinionsKilled` int(11) NOT NULL,
-  `DmgDealt` int(11) NOT NULL,
-  `DmgTaken` int(11) NOT NULL,
-  `TurretDmgDealt` int(11) NOT NULL,
-  `TotalGold` int(11) NOT NULL,
+  `MatchStatsId` int NOT NULL AUTO_INCREMENT,
+  `SummonerMatchFk` int NOT NULL,
+  `MinionsKilled` int NOT NULL,
+  `DmgDealt` int NOT NULL,
+  `DmgTaken` int NOT NULL,
+  `TurretDmgDealt` int NOT NULL,
+  `TotalGold` int NOT NULL,
   `Lane` varchar(55) NOT NULL,
   `Win` tinyint(1) NOT NULL,
-  `item1` int(11) NOT NULL,
-  `item2` int(11) NOT NULL,
-  `item3` int(11) NOT NULL,
-  `item4` int(11) NOT NULL,
-  `item5` int(11) NOT NULL,
-  `item6` int(11) NOT NULL,
-  `kills` int(11) NOT NULL,
-  `deaths` int(11) NOT NULL,
-  `assists` int(11) NOT NULL,
-  `PrimaryKeyStone` int(11) NOT NULL,
-  `PrimarySlot1` int(11) NOT NULL,
-  `PrimarySlot2` int(11) NOT NULL,
-  `PrimarySlot3` int(11) NOT NULL,
-  `SecondarySlot1` int(11) NOT NULL,
-  `SecondarySlot2` int(11) NOT NULL,
-  `SummonerSpell1` int(11) NOT NULL,
-  `SummonerSpell2` int(11) NOT NULL,
-  `CurrentMasteryPoints` int(11) NOT NULL,
-  `EnemyChampionFk` int(11) NOT NULL,
-  `DragonKills` int(11) NOT NULL,
-  `BaronKills` int(11) NOT NULL,
-  `visionScore` int(11) NOT NULL,
+  `item1` int NOT NULL,
+  `item2` int NOT NULL,
+  `item3` int NOT NULL,
+  `item4` int NOT NULL,
+  `item5` int NOT NULL,
+  `item6` int NOT NULL,
+  `kills` int NOT NULL,
+  `deaths` int NOT NULL,
+  `assists` int NOT NULL,
+  `PrimaryKeyStone` int NOT NULL,
+  `PrimarySlot1` int NOT NULL,
+  `PrimarySlot2` int NOT NULL,
+  `PrimarySlot3` int NOT NULL,
+  `SecondarySlot1` int NOT NULL,
+  `SecondarySlot2` int NOT NULL,
+  `SummonerSpell1` int NOT NULL,
+  `SummonerSpell2` int NOT NULL,
+  `CurrentMasteryPoints` int DEFAULT '0',
+  `EnemyChampionFk` int NOT NULL,
+  `DragonKills` int NOT NULL,
+  `BaronKills` int NOT NULL,
+  `visionScore` int NOT NULL,
   PRIMARY KEY (`MatchStatsId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `MatchTbl` (
   `MatchId` varchar(55) NOT NULL,
   `Patch` varchar(55) NOT NULL DEFAULT '13.4',
   `QueueType` varchar(100) NOT NULL,
-  `RankFk` int(11) NOT NULL,
-  `GameDuration` int(11) NOT NULL,
+  `RankFk` int NOT NULL,
+  `GameDuration` int NOT NULL,
   PRIMARY KEY (`MatchId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `RankTbl` (
-  `RankId` int(11) NOT NULL,
+  `RankId` int NOT NULL,
   `RankName` varchar(55) NOT NULL,
   PRIMARY KEY (`RankId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `RankTbl` (`RankId`, `RankName`) VALUES
 (0, 'Unranked'),
@@ -77,46 +85,87 @@ INSERT INTO `RankTbl` (`RankId`, `RankName`) VALUES
 (10, 'Challenger');
 
 CREATE TABLE `SummonerMatchTbl` (
-  `SummonerMatchId` int(11) NOT NULL AUTO_INCREMENT,
-  `SummonerFk` int(11) NOT NULL,
+  `SummonerMatchId` int NOT NULL AUTO_INCREMENT,
+  `SummonerFk` int NOT NULL,
   `MatchFk` varchar(55) NOT NULL,
-  `ChampionFk` int(11) NOT NULL,
+  `ChampionFk` int NOT NULL,
   PRIMARY KEY (`SummonerMatchId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `SummonerSpellTbl` (
+  `SpellId` int NOT NULL,
+  `SpellName` varchar(50) NOT NULL,
+  PRIMARY KEY (`SpellId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `SummonerUserTbl` (
-  `SummonerID` int(11) NOT NULL AUTO_INCREMENT,
+  `SummonerID` int NOT NULL AUTO_INCREMENT,
   `SummonerName` varchar(155) NOT NULL,
   PRIMARY KEY (`SummonerID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `TeamMatchTbl` (
-  `TeamID` int(11) NOT NULL AUTO_INCREMENT,
+  `TeamID` int NOT NULL AUTO_INCREMENT,
   `MatchFk` varchar(155) NOT NULL,
-  `B1Champ` int(11) NOT NULL,
-  `B2Champ` int(11) NOT NULL,
-  `B3Champ` int(11) NOT NULL,
-  `B4Champ` int(11) NOT NULL,
-  `B5Champ` int(11) NOT NULL,
-  `R1Champ` int(11) NOT NULL,
-  `R2Champ` int(11) NOT NULL,
-  `R3Champ` int(11) NOT NULL,
-  `R4Champ` int(11) NOT NULL,
-  `R5Champ` int(11) NOT NULL,
-  `BlueBaronKills` int(11) NOT NULL,
-  `BlueRiftHeraldKills` int(11) NOT NULL,
-  `BlueDragonKills` int(11) NOT NULL,
-  `BlueTowerKills` int(11) NOT NULL,
-  `BlueKills` int(11) NOT NULL,
-  `RedBaronKills` int(11) NOT NULL,
-  `RedRiftHeraldKills` int(11) NOT NULL,
-  `RedDragonKills` int(11) NOT NULL,
-  `RedTowerKills` int(11) NOT NULL,
-  `RedKills` int(11) NOT NULL,
-  `RedWin` int(11) NOT NULL DEFAULT 0,
-  `BlueWin` int(11) NOT NULL DEFAULT 0,
+  `B1Champ` int NOT NULL,
+  `B2Champ` int NOT NULL,
+  `B3Champ` int NOT NULL,
+  `B4Champ` int NOT NULL,
+  `B5Champ` int NOT NULL,
+  `R1Champ` int NOT NULL,
+  `R2Champ` int NOT NULL,
+  `R3Champ` int NOT NULL,
+  `R4Champ` int NOT NULL,
+  `R5Champ` int NOT NULL,
+  `BlueBaronKills` int NOT NULL,
+  `BlueRiftHeraldKills` int NOT NULL,
+  `BlueDragonKills` int NOT NULL,
+  `BlueTowerKills` int NOT NULL,
+  `BlueKills` int NOT NULL,
+  `RedBaronKills` int NOT NULL,
+  `RedRiftHeraldKills` int NOT NULL,
+  `RedDragonKills` int NOT NULL,
+  `RedTowerKills` int NOT NULL,
+  `RedKills` int NOT NULL,
+  `RedWin` int NOT NULL DEFAULT '0',
+  `BlueWin` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`TeamID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `KeystoneTbl` (`KeystoneId`, `KeystoneName`, `TreeName`) VALUES
+(0, 'No Keystone (Special Mode)', 'None'),
+(8005, 'Press the Attack', 'Precision'),
+(8008, 'Lethal Tempo', 'Precision'),
+(8010, 'Conqueror', 'Precision'),
+(8021, 'Fleet Footwork', 'Precision'),
+(8112, 'Electrocute', 'Domination'),
+(8124, 'Predator', 'Domination'),
+(8128, 'Dark Harvest', 'Domination'),
+(8214, 'Summon Aery', 'Sorcery'),
+(8229, 'Arcane Comet', 'Sorcery'),
+(8230, 'Phase Rush', 'Sorcery'),
+(8351, 'Glacial Augment', 'Inspiration'),
+(8360, 'Unsealed Spellbook', 'Inspiration'),
+(8369, 'First Strike', 'Inspiration'),
+(8437, 'Grasp of the Undying', 'Resolve'),
+(8439, 'Aftershock', 'Resolve'),
+(8465, 'Guardian', 'Resolve'),
+(9923, 'Hail of Blades', 'Domination');
+
+INSERT INTO `SummonerSpellTbl` (`SpellId`, `SpellName`) VALUES
+(1, 'Cleanse'),
+(3, 'Exhaust'),
+(4, 'Flash'),
+(6, 'Ghost'),
+(7, 'Heal'),
+(11, 'Smite'),
+(12, 'Teleport'),
+(13, 'Clarity'),
+(14, 'Ignite'),
+(21, 'Barrier'),
+(32, 'Mark'),
+(2201, 'Arena Warp (Special)'),
+(2202, 'Flee (Special)');
 
 
 INSERT INTO `ItemTbl` (`ItemID`,`ItemName`) VALUES
