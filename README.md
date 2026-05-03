@@ -234,6 +234,10 @@ League_CSV_Export/
 - Support role is inferred from champion ID and CS because Riot API often reports both bot-lane players as `BOTTOM`.
 - Riot development API keys expire, so `config.py` may need to be updated regularly.
 
+## Credits
+
+This project is based on the original `LeagueDatabaseandStatsCollector` repository by NathanSmallcalder. This version has been substantially modified for 10-minute match data collection, SEA routing, updated MySQL schema setup, and a simplified crawler workflow centered on `match_crawler.py`.
+
 ## Riot Games API Notice
 
 This project uses the Riot Games API. This project is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties.
