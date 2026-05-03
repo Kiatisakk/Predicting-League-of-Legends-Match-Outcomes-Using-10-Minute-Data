@@ -44,7 +44,7 @@ summonerSpells = {  # Summoner Spell Image Data Store
 def create_connection():
     config = {
         'user': 'league_user',
-        'password': 'StrongPassword123!',
+        'password': 'mysql',
         'host': 'localhost',
         'port': 3306,
         'database': 'LeagueStats',
@@ -147,22 +147,22 @@ def getSingleMasteryScore(champId, mastery):
 ### Returns data from getMatches
 def getMatchData(region,id,SummonerInfo,RankedDetails):
     mastery = getMasteryStats(region, SummonerInfo['puuid'])
-    MatchIDs = requests.get("https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/"+ SummonerInfo['puuid'] +  "/ids?start=0&count=10&api_key=" + API)
+    MatchIDs = requests.get("https://sea.api.riotgames.com/lol/match/v5/matches/by-puuid/"+ SummonerInfo['puuid'] +  "/ids?start=0&count=10&api_key=" + API)
     MatchIDs = MatchIDs.json()
-    data = getMatches("europe", MatchIDs, SummonerInfo,RankedDetails,mastery)
+    data = getMatches("asia", MatchIDs, SummonerInfo,RankedDetails,mastery)
     return data
 
 ### Gets 5 MatchIds
 def getMatchData5Matches(region,id,SummonerInfo,RankedDetails):
     mastery = getMasteryStats(region, SummonerInfo['puuid'])
-    MatchIDs = requests.get("https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/"+ SummonerInfo['puuid'] +  "/ids?start=0&count=5&api_key=" + API)
+    MatchIDs = requests.get("https://sea.api.riotgames.com/lol/match/v5/matches/by-puuid/"+ SummonerInfo['puuid'] +  "/ids?start=0&count=5&api_key=" + API)
     MatchIDs = MatchIDs.json()
-    data = getMatches("europe", MatchIDs, SummonerInfo,RankedDetails,mastery)
+    data = getMatches("asia", MatchIDs, SummonerInfo,RankedDetails,mastery)
     return data
 
 ### Gets x MatchIds
 def getMatchIds(region,puuid):
-    MatchIDs = requests.get("https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/"+ puuid +  "/ids?start=0&count=10&api_key=" + API)
+    MatchIDs = requests.get("https://sea.api.riotgames.com/lol/match/v5/matches/by-puuid/"+ puuid +  "/ids?start=0&count=10&api_key=" + API)
     MatchIDs = MatchIDs.json()
     return MatchIDs
 
@@ -174,18 +174,34 @@ def getMatches(region,Summoner,MatchIDs,SummonerInfo,RankedDetails,mastery):
     summonerName = Summoner['gameName']
 
     #if user doesnt exist insert into database
-    try:
-        SummonerFk = getSummonerIdFromDatabase(summonerName)
-    except:
-        SummonerFk = None
+    # try:
+    #     SummonerFk = getSummonerIdFromDatabase(summonerName)
+    # except:
+    #     SummonerFk = None
     
-    if SummonerFk != None:
-        pass
+    # if SummonerFk != None:
+    #     pass
+    # else:
+    #     try:
+    #         SummonerFk = insertUser(summonerName)
+    #     except:
+    #         pass
+
+    local_conn = create_connection()
+    local_cursor = local_conn.cursor()
+    local_cursor.execute("SELECT SummonerID FROM SummonerUserTbl WHERE SummonerName = %s", (summonerName,))
+    result = local_cursor.fetchone()
+
+    if result:
+        SummonerFk = result[0]  # ถ้ามีชื่ออยู่แล้ว ดึง ID มาใช้เลย
     else:
-        try:
-            SummonerFk = insertUser(summonerName)
-        except:
-            pass
+        local_cursor.execute("INSERT INTO SummonerUserTbl (SummonerName) VALUES (%s)", (summonerName,))
+        local_conn.commit()
+        SummonerFk = local_cursor.lastrowid  # ถ้าเพิ่งสร้างใหม่ ดึง ID ล่าสุดมาใช้
+        
+    local_cursor.close()
+    local_conn.close()
+
     print("Summoner ID ======", SummonerFk)
     temp = []
     tempMatchIds = []
@@ -225,7 +241,7 @@ def getMatches(region,Summoner,MatchIDs,SummonerInfo,RankedDetails,mastery):
             'gameVersion':[]
         }
 
-        MatchData = requests.get("https://europe.api.riotgames.com/lol/match/v5/matches/"+ matchID +"?api_key=" + api_key)
+        MatchData = requests.get("https://sea.api.riotgames.com/lol/match/v5/matches/"+ matchID +"?api_key=" + api_key)
    
         MatchData = MatchData.json()
         FullMatchData = MatchData
@@ -302,8 +318,12 @@ def getMatches(region,Summoner,MatchIDs,SummonerInfo,RankedDetails,mastery):
         role = player_data['lane']
         turretDmg = player_data['turretTakedowns']
         print(player_data['challenges']['enemyJungleMonsterKills'])
-        jungleCampsKilled = player_data['challenges']['enemyJungleMonsterKills'] + player_data['challenges']['alliedJungleMonsterKills']
-        riftHeraldKills = player_data['challenges']['teamRiftHeraldKills']         
+        
+        challenges = player_data.get('challenges', {})
+        jungleCampsKilled = challenges.get('enemyJungleMonsterKills', 0) + challenges.get('alliedJungleMonsterKills', 0)
+        riftHeraldKills = challenges.get('teamRiftHeraldKills', 0)
+        vision_score = player_data.get('visionScore', 0)    
+
         vision_score = player_data['visionScore']                
      
         data['teamRiftHeraldKills'] = riftHeraldKills
@@ -622,7 +642,7 @@ def getMatchTimeline(region,id,puuid,data):
                     'totalDamageDonePerMin': [],
                     'totalDamageTakenPerMin': []
             }
-            MatchData = requests.get("https://europe.api.riotgames.com/lol/match/v5/matches/" + matchID + "/timeline?api_key=" + api_key)
+            MatchData = requests.get("https://sea.api.riotgames.com/lol/match/v5/matches/" + matchID + "/timeline?api_key=" + api_key)
      
             MatchData = MatchData.json()
       

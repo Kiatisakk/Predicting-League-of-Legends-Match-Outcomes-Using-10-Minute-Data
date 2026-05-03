@@ -7,6 +7,7 @@ import json
 from config import *
 import time
 import requests
+import traceback
 
 def Normalise(stri):
     stri = str(stri)
@@ -20,7 +21,7 @@ def Normalise(stri):
 
 config = {
     'user': 'league_user',
-    'password': 'StrongPassword123!',
+    'password': 'mysql',
     'host': 'localhost',
     'port': 3306,
     'database': 'LeagueStats',
@@ -31,8 +32,8 @@ config = {
 connection = mysql.connector.connect(**config)
 cursor = connection.cursor(buffered=True)
 
-RegionStart = "europe"
-Region = "EUW1"
+RegionStart = "asia"
+Region = "SG2"
 
 def summoner(summonerName, tagline):
     try:
@@ -50,13 +51,13 @@ def summoner(summonerName, tagline):
         connection.commit()
 
         MatchIDs = requests.get(
-            "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/"
+            "https://sea.api.riotgames.com/lol/match/v5/matches/by-puuid/"
             + SummonerInfo['puuid']
             + "/ids?start=0&count=20&api_key="
             + api_key
         )
         MatchIDs = MatchIDs.json()
-        matchData = getMatches("euw1", Summoner, MatchIDs, SummonerInfo, RankedDetails, mastery)
+        matchData = getMatches("sea", Summoner, MatchIDs, SummonerInfo, RankedDetails, mastery)
         matchData2 = getsMatchData()
         Match = matchData2[1]['MatchIDS']
         Match = Normalise(Match)
@@ -64,10 +65,10 @@ def summoner(summonerName, tagline):
         i = 0
         for MatchId in MatchIDs:
                 MatchData = requests.get(
-                    "https://europe.api.riotgames.com/lol/match/v5/matches/" + MatchId + "?api_key=" + api_key
+                    "https://sea.api.riotgames.com/lol/match/v5/matches/" + MatchId + "?api_key=" + api_key
                 ).json()
 
-                print("https://europe.api.riotgames.com/lol/match/v5/matches/" + MatchId + "?api_key=" + api_key)
+                print("https://sea.api.riotgames.com/lol/match/v5/matches/" + MatchId + "?api_key=" + api_key)
 
                 ii = 0
                 champList = []
@@ -76,6 +77,12 @@ def summoner(summonerName, tagline):
                     cursor.execute("SELECT `ChampionId` FROM `ChampionTbl` WHERE `ChampionName` = (%s)", (champion,))
                     Champion = cursor.fetchall()
                     Champion = Normalise(Champion)
+
+                    if Champion == "" or Champion == "None":
+                        Champion = 0  
+                    else:
+                        Champion = int(Champion)
+
                     print("Champion", Champion, champion)
                     champList.append(Champion)
                     ii += 1
@@ -158,7 +165,8 @@ def summoner(summonerName, tagline):
                     Role= matchData[i]['Role']
                 
                     #CHANGE BOTTOM TO SUPPORT IF SUPPORT
-                    if int(Champion) == 412 or 350 or 117 or 235 or 497 or 111 or 99 or 267 or 43 or 53 or 555 or 25 or 1 or 22 or 16 or 89 or 101 or 12 or 143 or 40 or 147 or 37 or 26 or 888 or 50 or 432 or 32 or 63 or 74 or 201 or 29 or 161 or 44 or 526 or 57 or 518:
+                    support_champs = [412, 350, 117, 235, 497, 111, 99, 267, 43, 53, 555, 25, 1, 22, 16, 89, 101, 12, 143, 40, 147, 37, 26, 888, 50, 432, 32, 63, 74, 201, 29, 161, 44, 526, 57, 518]
+                    if int(Champion) in support_champs:
                         if Role == "BOTTOM" and cs < 75:
                             Role = "SUPPORT"
 
@@ -236,10 +244,10 @@ def summoner(summonerName, tagline):
                     connection.commit()
                     print("NEXT NEXT NEXT")
                     i = i + 1
-    except:
-        pass
+    except Exception as e:
+        print(f"Error in summoner ({summonerName}#{tagline}): {e}")
+        traceback.print_exc()
 
-            
 # Read summoner names and taglines from file
 with open('summoner_names.txt', 'r', encoding='utf-8') as file:
     lines = file.readlines()

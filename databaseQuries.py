@@ -11,7 +11,7 @@ import mysql.connector
 def create_connection():
     config = {
     'user': 'league_user',
-    'password': 'StrongPassword123!',
+    'password': 'mysql',
     'host': 'localhost',
     'port': 3306,
     'database': 'LeagueStats',
@@ -491,10 +491,16 @@ def getChampId(champion):
     cursor = connection.cursor(buffered=True)
     print(champion)
     cursor.execute("SELECT `ChampionId` FROM `ChampionTbl` WHERE `ChampionName` = (%s)", (champion, ))
-    champion = cursor.fetchone()
-    champion = champion[0]
-    print(champion)
-    return champion
+    champion_row = cursor.fetchone()
+    if champion_row is not None:
+        return champion_row[0]
+    else:
+        print(f"Warning: หาแชมป์เปี้ยนไม่เจอในฐานข้อมูล ({champion})")
+        return 0
+    # champion = cursor.fetchone()
+    # champion = champion[0]
+    # print(champion)
+    # return champion
 
 def Normalise(stri):
     stri = str(stri)
