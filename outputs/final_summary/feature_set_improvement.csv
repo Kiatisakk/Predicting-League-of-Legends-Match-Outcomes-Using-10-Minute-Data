@@ -1,0 +1,4 @@
+Comparison,From,To,Delta_Test_AUC,Delta_Test_Accuracy,Delta_Test_F1
+Aggregate-only best vs baseline,03 Baseline,04 Aggregate-only,-0.00037817860704647543,-0.0017505470459517891,-0.0025150221606380363
+All-features best vs aggregate-only best,04 Aggregate-only,05 All features,0.017671374856610855,0.015171407731582764,0.015798766576787693
+All-features best vs baseline,03 Baseline,05 All features,0.01729319624956438,0.013420860685630975,0.013283744416149657

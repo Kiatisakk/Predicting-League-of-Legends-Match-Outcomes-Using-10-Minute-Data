@@ -1,0 +1,7 @@
+Best overall experiment: 05 All features using CatBoost with Test AUC = 0.8001.
+Baseline Test AUC = 0.7828.
+Aggregate-only best Test AUC = 0.7824, delta vs baseline = -0.0004.
+All-features best Test AUC = 0.8001, delta vs aggregate-only = +0.0177.
+All-features best delta vs baseline = +0.0173.
+In aggregate-only, best model minus Logistic Regression Test AUC = +0.0012.
+In all-features, best model minus Logistic Regression Test AUC = +0.0030.
