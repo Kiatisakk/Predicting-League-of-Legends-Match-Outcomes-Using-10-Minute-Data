@@ -2,3 +2,4 @@ data/
 __pycache__/
 .env
 *.zip
+catboost_info/

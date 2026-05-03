@@ -1,6 +1,6 @@
 Notebook,Feature_Set,Selected_Model_Type,Model,Val_AUC,Test_Accuracy,Test_AUC,Test_F1,Feature_Count
 03_baseline_model_kaggle,Baseline raw encoded features,LogisticRegression,LogisticRegression,0.7756030169310217,0.7052516411378555,0.7828129687065344,0.7027583670467084,185.0
-04_modeling_aggregate_only,Aggregate-only engineered features,BestModel,CatBoost,0.7733880155805668,0.7035010940919038,0.7824347900994879,0.7002433448860703,
+04_modeling_aggregate_only,Aggregate-only engineered features,BestModel,CatBoost,0.7733880155805668,0.7031363967906638,0.7822459455235535,0.6994091580502215,
 04_modeling_aggregate_only,Aggregate-only engineered features,LogisticRegression,LogisticRegression,0.7721924852562043,0.7036469730123998,0.7812421580768276,0.7012280314729025,
-05_modeling_all_features,Combined aggregate + champion/setup features,BestModel,CatBoost,0.7933480574414744,0.7186725018234865,0.8001061649560988,0.716042111462858,
+05_modeling_all_features,Combined aggregate + champion/setup features,BestModel,CatBoost,0.7933480574414744,0.7160466812545587,0.7988922522735405,0.7131383096308305,
 05_modeling_all_features,Combined aggregate + champion/setup features,LogisticRegression,LogisticRegression,0.7926724256276102,0.7174325309992706,0.7970664354962769,0.7156905915162189,
