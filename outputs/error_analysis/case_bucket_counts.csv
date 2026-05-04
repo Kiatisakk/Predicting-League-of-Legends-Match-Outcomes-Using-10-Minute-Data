@@ -1,0 +1,5 @@
+case_bucket,count,share
+both_correct,8699,0.6345003646973012
+both_wrong,2969,0.21655725747629467
+linear_correct_tree_wrong,1137,0.08293216630196937
+linear_wrong_tree_correct,905,0.06601021152443472

@@ -1,0 +1,3 @@
+model_family,model,test_accuracy,test_auc,test_f1
+linear,LogisticRegression,0.7174325309992706,0.7970664354962769,0.7156905915162189
+tree_based,RandomForestClassifier,0.700510576221736,0.7806441502530357,0.6974207811348563
