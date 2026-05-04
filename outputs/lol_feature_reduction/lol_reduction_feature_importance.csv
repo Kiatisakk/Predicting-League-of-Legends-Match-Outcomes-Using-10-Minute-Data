@@ -1,0 +1,375 @@
+Feature_Set,Model,feature,coefficient,importance,direction
+LoL Core Signals,LogisticRegression,RedKills,1.844587564161109,1.844587564161109,Blue-favored
+LoL Core Signals,LogisticRegression,BlueKills,1.0255237229023768,1.0255237229023768,Blue-favored
+LoL Core Signals,LogisticRegression,Diff_TeamKills,-1.0235514133080164,1.0235514133080164,Red-favored
+LoL Core Signals,LogisticRegression,Red_kills_sum,-0.8507748530270031,0.8507748530270031,Red-favored
+LoL Core Signals,LogisticRegression,Red_kills_avg,-0.8507748530269974,0.8507748530269974,Red-favored
+LoL Core Signals,LogisticRegression,Diff_kills,0.5728737118997054,0.5728737118997054,Blue-favored
+LoL Core Signals,LogisticRegression,Diff_TotalGold,0.5241365568161581,0.5241365568161581,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_kills_sum,-0.1980248745770708,0.1980248745770708,Red-favored
+LoL Core Signals,LogisticRegression,Blue_kills_avg,-0.19802487457705154,0.19802487457705154,Red-favored
+LoL Core Signals,LogisticRegression,Diff_MinionsKilled,0.19509159617116448,0.19509159617116448,Blue-favored
+LoL Core Signals,LogisticRegression,Red_TotalGold_avg,-0.12764383559964398,0.12764383559964398,Red-favored
+LoL Core Signals,LogisticRegression,Red_TotalGold_sum,-0.12764383559964193,0.12764383559964193,Red-favored
+LoL Core Signals,LogisticRegression,BlueDragonKills,0.10812134173042733,0.10812134173042733,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_TotalGold_sum,0.10064003687799604,0.10064003687799604,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_TotalGold_avg,0.1006400368779931,0.1006400368779931,Blue-favored
+LoL Core Signals,LogisticRegression,Diff_DragonKills,0.0971895203855191,0.0971895203855191,Blue-favored
+LoL Core Signals,LogisticRegression,Red_deaths_avg,-0.08338186128235164,0.08338186128235164,Red-favored
+LoL Core Signals,LogisticRegression,Red_deaths_sum,-0.0833818612823312,0.0833818612823312,Red-favored
+LoL Core Signals,LogisticRegression,Blue_Lead_Signal_Count,-0.07617849641033363,0.07617849641033363,Red-favored
+LoL Core Signals,LogisticRegression,Blue_deaths_sum,-0.0739831541305161,0.0739831541305161,Red-favored
+LoL Core Signals,LogisticRegression,Blue_deaths_avg,-0.07398315413050689,0.07398315413050689,Red-favored
+LoL Core Signals,LogisticRegression,RedDragonKills,-0.07264023959668231,0.07264023959668231,Red-favored
+LoL Core Signals,LogisticRegression,Red_MinionsKilled_avg,-0.06411498173720605,0.06411498173720605,Red-favored
+LoL Core Signals,LogisticRegression,Red_MinionsKilled_sum,-0.06411498173719485,0.06411498173719485,Red-favored
+LoL Core Signals,LogisticRegression,Blue_MinionsKilled_avg,0.060215969550811696,0.060215969550811696,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_MinionsKilled_sum,0.060215969550808206,0.060215969550808206,Blue-favored
+LoL Core Signals,LogisticRegression,Diff_GoldStd,0.057132662199331816,0.057132662199331816,Blue-favored
+LoL Core Signals,LogisticRegression,Red_Lead_Signal_Count,-0.054676673503153805,0.054676673503153805,Red-favored
+LoL Core Signals,LogisticRegression,Diff_DmgDealt,0.05458900225393585,0.05458900225393585,Blue-favored
+LoL Core Signals,LogisticRegression,Objective_Control_Index,0.047232308490227096,0.047232308490227096,Blue-favored
+LoL Core Signals,LogisticRegression,Red_GoldStd,-0.04433896504860538,0.04433896504860538,Red-favored
+LoL Core Signals,LogisticRegression,Diff_TowerKills,-0.042927017926931835,0.042927017926931835,Red-favored
+LoL Core Signals,LogisticRegression,RedTowerKills,0.03660180197296862,0.03660180197296862,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_GoldStd,0.03411873119558862,0.03411873119558862,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_KDA,0.032591656358859,0.032591656358859,Blue-favored
+LoL Core Signals,LogisticRegression,Red_Damage_per_Gold,-0.03238458334733063,0.03238458334733063,Red-favored
+LoL Core Signals,LogisticRegression,Diff_KDA,0.03166530144608039,0.03166530144608039,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_DmgDealt_sum,0.026744472474787485,0.026744472474787485,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_DmgDealt_avg,0.02674447247478064,0.02674447247478064,Blue-favored
+LoL Core Signals,LogisticRegression,Diff_RiftHeraldKills,0.025291706863934497,0.025291706863934497,Blue-favored
+LoL Core Signals,LogisticRegression,BlueRiftHeraldKills,0.02441754416436526,0.02441754416436526,Blue-favored
+LoL Core Signals,LogisticRegression,Diff_DmgTaken,0.023560574483725196,0.023560574483725196,Blue-favored
+LoL Core Signals,LogisticRegression,Kill_Objective_Alignment,0.023274576954087273,0.023274576954087273,Blue-favored
+LoL Core Signals,LogisticRegression,Diff_Damage_per_Gold,0.021969634181025304,0.021969634181025304,Blue-favored
+LoL Core Signals,LogisticRegression,BlueTowerKills,-0.02115732767981612,0.02115732767981612,Red-favored
+LoL Core Signals,LogisticRegression,Red_KDA,-0.021029296815788582,0.021029296815788582,Red-favored
+LoL Core Signals,LogisticRegression,RedRiftHeraldKills,-0.020966794167221695,0.020966794167221695,Red-favored
+LoL Core Signals,LogisticRegression,Gold_Objective_Alignment,-0.020087286463354698,0.020087286463354698,Red-favored
+LoL Core Signals,LogisticRegression,Blue_DmgTaken_avg,0.0164799826141062,0.0164799826141062,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_DmgTaken_sum,0.016479982614101305,0.016479982614101305,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_Damage_per_Gold,-0.01602899601524666,0.01602899601524666,Red-favored
+LoL Core Signals,LogisticRegression,Diff_assists,0.015348469963230933,0.015348469963230933,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_MaxGoldShare,0.013794874500260642,0.013794874500260642,Blue-favored
+LoL Core Signals,LogisticRegression,Diff_deaths,0.011215885323517609,0.011215885323517609,Blue-favored
+LoL Core Signals,LogisticRegression,Lead_Signal_Balance,-0.010764729853801228,0.010764729853801228,Red-favored
+LoL Core Signals,LogisticRegression,Red_assists_sum,-0.00968602834957615,0.00968602834957615,Red-favored
+LoL Core Signals,LogisticRegression,Red_assists_avg,-0.00968602834957582,0.00968602834957582,Red-favored
+LoL Core Signals,LogisticRegression,Red_DmgDealt_avg,-0.008341440092859932,0.008341440092859932,Red-favored
+LoL Core Signals,LogisticRegression,Red_DmgDealt_sum,-0.008341440092847595,0.008341440092847595,Red-favored
+LoL Core Signals,LogisticRegression,Diff_MaxGoldShare,0.006890599846263074,0.006890599846263074,Blue-favored
+LoL Core Signals,LogisticRegression,Red_MaxGoldShare,0.004451117635250458,0.004451117635250458,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_assists_sum,0.0021643722463742673,0.0021643722463742673,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_assists_avg,0.00216437224636992,0.00216437224636992,Blue-favored
+LoL Core Signals,LogisticRegression,Red_DmgTaken_sum,0.001371283742411784,0.001371283742411784,Blue-favored
+LoL Core Signals,LogisticRegression,Red_DmgTaken_avg,0.001371283742410295,0.001371283742410295,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_TurretDmgDealt_sum,0.0,0.0,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_TurretDmgDealt_avg,0.0,0.0,Blue-favored
+LoL Core Signals,LogisticRegression,Red_TurretDmgDealt_avg,0.0,0.0,Blue-favored
+LoL Core Signals,LogisticRegression,Red_TurretDmgDealt_sum,0.0,0.0,Blue-favored
+LoL Core Signals,LogisticRegression,Diff_TurretDmgDealt,0.0,0.0,Blue-favored
+LoL Core Signals,LogisticRegression,RedBaronKills,0.0,0.0,Blue-favored
+LoL Core Signals,LogisticRegression,Diff_BaronKills,0.0,0.0,Blue-favored
+LoL Core Signals,LogisticRegression,Red_TurretDamage_per_Gold,0.0,0.0,Blue-favored
+LoL Core Signals,LogisticRegression,Blue_TurretDamage_per_Gold,0.0,0.0,Blue-favored
+LoL Core Signals,LogisticRegression,BlueBaronKills,0.0,0.0,Blue-favored
+LoL Core Signals,LogisticRegression,Diff_TurretDamage_per_Gold,0.0,0.0,Blue-favored
+LoL Core Signals,CatBoost_reduced_default,Diff_TotalGold,,20.082875686997614,
+LoL Core Signals,CatBoost_reduced_default,Blue_MinionsKilled_sum,,11.126735645600627,
+LoL Core Signals,CatBoost_reduced_default,Red_MinionsKilled_avg,,9.060657826805324,
+LoL Core Signals,CatBoost_reduced_default,Red_MinionsKilled_sum,,7.933541785597926,
+LoL Core Signals,CatBoost_reduced_default,Diff_MinionsKilled,,5.466486372367296,
+LoL Core Signals,CatBoost_reduced_default,Blue_MinionsKilled_avg,,5.000968714953361,
+LoL Core Signals,CatBoost_reduced_default,Diff_TeamKills,,3.391188537017273,
+LoL Core Signals,CatBoost_reduced_default,Red_Lead_Signal_Count,,2.9255021952037277,
+LoL Core Signals,CatBoost_reduced_default,BlueDragonKills,,2.432705162791422,
+LoL Core Signals,CatBoost_reduced_default,RedDragonKills,,2.1006306186621218,
+LoL Core Signals,CatBoost_reduced_default,Diff_GoldStd,,2.0798355587242243,
+LoL Core Signals,CatBoost_reduced_default,Diff_DragonKills,,1.7752288695660872,
+LoL Core Signals,CatBoost_reduced_default,Blue_DmgTaken_avg,,1.4899939378417435,
+LoL Core Signals,CatBoost_reduced_default,Blue_TotalGold_avg,,1.4728584492330103,
+LoL Core Signals,CatBoost_reduced_default,Diff_deaths,,1.2466787086010584,
+LoL Core Signals,CatBoost_reduced_default,Red_KDA,,1.1935622484764303,
+LoL Core Signals,CatBoost_reduced_default,Diff_KDA,,0.9365673127404988,
+LoL Core Signals,CatBoost_reduced_default,Red_GoldStd,,0.9210116311705004,
+LoL Core Signals,CatBoost_reduced_default,Diff_kills,,0.8882161132649499,
+LoL Core Signals,CatBoost_reduced_default,Blue_KDA,,0.7547826663662555,
+LoL Core Signals,CatBoost_reduced_default,Kill_Objective_Alignment,,0.7527812354859085,
+LoL Core Signals,CatBoost_reduced_default,Red_TotalGold_sum,,0.7427148629417557,
+LoL Core Signals,CatBoost_reduced_default,Red_TotalGold_avg,,0.7062559225801955,
+LoL Core Signals,CatBoost_reduced_default,Diff_Damage_per_Gold,,0.688697697835754,
+LoL Core Signals,CatBoost_reduced_default,Lead_Signal_Balance,,0.6772696243248676,
+LoL Core Signals,CatBoost_reduced_default,Blue_DmgDealt_sum,,0.6630693951701323,
+LoL Core Signals,CatBoost_reduced_default,Blue_Damage_per_Gold,,0.6613299131290734,
+LoL Core Signals,CatBoost_reduced_default,Blue_Lead_Signal_Count,,0.6459921865161962,
+LoL Core Signals,CatBoost_reduced_default,Blue_MaxGoldShare,,0.6039742138125636,
+LoL Core Signals,CatBoost_reduced_default,Objective_Control_Index,,0.5788131516371441,
+LoL Core Signals,CatBoost_reduced_default,Gold_Objective_Alignment,,0.5761559422074081,
+LoL Core Signals,CatBoost_reduced_default,Diff_MaxGoldShare,,0.5359744980780665,
+LoL Core Signals,CatBoost_reduced_default,Blue_GoldStd,,0.5040539059979781,
+LoL Core Signals,CatBoost_reduced_default,RedRiftHeraldKills,,0.4711722583670614,
+LoL Core Signals,CatBoost_reduced_default,Blue_assists_sum,,0.44663002188261913,
+LoL Core Signals,CatBoost_reduced_default,Red_DmgDealt_sum,,0.4363030211933273,
+LoL Core Signals,CatBoost_reduced_default,Red_DmgDealt_avg,,0.4234272786011829,
+LoL Core Signals,CatBoost_reduced_default,RedKills,,0.40740184174151745,
+LoL Core Signals,CatBoost_reduced_default,Red_assists_sum,,0.39832675358587777,
+LoL Core Signals,CatBoost_reduced_default,Blue_kills_sum,,0.39448838976434697,
+LoL Core Signals,CatBoost_reduced_default,Blue_DmgDealt_avg,,0.38721552937819415,
+LoL Core Signals,CatBoost_reduced_default,Diff_DmgDealt,,0.376292303647733,
+LoL Core Signals,CatBoost_reduced_default,Red_DmgTaken_sum,,0.3680798472351998,
+LoL Core Signals,CatBoost_reduced_default,Red_DmgTaken_avg,,0.356481448832798,
+LoL Core Signals,CatBoost_reduced_default,Diff_RiftHeraldKills,,0.3540983930005677,
+LoL Core Signals,CatBoost_reduced_default,BlueRiftHeraldKills,,0.351825498399883,
+LoL Core Signals,CatBoost_reduced_default,Red_kills_sum,,0.3397914972841178,
+LoL Core Signals,CatBoost_reduced_default,Red_MaxGoldShare,,0.33608013365414513,
+LoL Core Signals,CatBoost_reduced_default,Diff_assists,,0.3333545598258321,
+LoL Core Signals,CatBoost_reduced_default,Blue_TotalGold_sum,,0.3242351742104572,
+LoL Core Signals,CatBoost_reduced_default,Diff_TowerKills,,0.3226866958960424,
+LoL Core Signals,CatBoost_reduced_default,Red_kills_avg,,0.32133149223647745,
+LoL Core Signals,CatBoost_reduced_default,BlueKills,,0.31143717837208373,
+LoL Core Signals,CatBoost_reduced_default,Diff_DmgTaken,,0.239581669546437,
+LoL Core Signals,CatBoost_reduced_default,Blue_kills_avg,,0.2310567228893053,
+LoL Core Signals,CatBoost_reduced_default,Blue_deaths_avg,,0.1897215252841874,
+LoL Core Signals,CatBoost_reduced_default,Red_assists_avg,,0.18969611654243645,
+LoL Core Signals,CatBoost_reduced_default,RedTowerKills,,0.17851993719022827,
+LoL Core Signals,CatBoost_reduced_default,Blue_DmgTaken_sum,,0.1781311590948011,
+LoL Core Signals,CatBoost_reduced_default,Red_Damage_per_Gold,,0.17534297781718403,
+LoL Core Signals,CatBoost_reduced_default,Red_deaths_avg,,0.16881066474616613,
+LoL Core Signals,CatBoost_reduced_default,Blue_assists_avg,,0.13987471875653298,
+LoL Core Signals,CatBoost_reduced_default,Red_deaths_sum,,0.11449630507727318,
+LoL Core Signals,CatBoost_reduced_default,Blue_deaths_sum,,0.06719506247044807,
+LoL Core Signals,CatBoost_reduced_default,BlueTowerKills,,0.04980323177704336,
+LoL Core Signals,CatBoost_reduced_default,Blue_TurretDmgDealt_sum,,0.0,
+LoL Core Signals,CatBoost_reduced_default,Blue_TurretDmgDealt_avg,,0.0,
+LoL Core Signals,CatBoost_reduced_default,Red_TurretDmgDealt_avg,,0.0,
+LoL Core Signals,CatBoost_reduced_default,Red_TurretDmgDealt_sum,,0.0,
+LoL Core Signals,CatBoost_reduced_default,Diff_TurretDmgDealt,,0.0,
+LoL Core Signals,CatBoost_reduced_default,RedBaronKills,,0.0,
+LoL Core Signals,CatBoost_reduced_default,Diff_BaronKills,,0.0,
+LoL Core Signals,CatBoost_reduced_default,Red_TurretDamage_per_Gold,,0.0,
+LoL Core Signals,CatBoost_reduced_default,Blue_TurretDamage_per_Gold,,0.0,
+LoL Core Signals,CatBoost_reduced_default,BlueBaronKills,,0.0,
+LoL Core Signals,CatBoost_reduced_default,Diff_TurretDamage_per_Gold,,0.0,
+LoL Core + Lane Matchups,LogisticRegression,RedKills,1.7073581114844338,1.7073581114844338,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_TeamKills,-0.9527174482213455,0.9527174482213455,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,BlueKills,0.942660085951391,0.942660085951391,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_kills_sum,-0.751578270313766,0.751578270313766,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_kills_avg,-0.7515782703137643,0.7515782703137643,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_TotalGold,0.46648108538564076,0.46648108538564076,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_kills,0.44325800414888034,0.44325800414888034,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,JUNGLE_kills_Diff,0.3160112126501908,0.3160112126501908,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_kills_sum,-0.243254370986058,0.243254370986058,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_kills_avg,-0.24325437098605782,0.24325437098605782,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,TOP_kills_Diff,0.1858257451238583,0.1858257451238583,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_MinionsKilled,0.17804050483419484,0.17804050483419484,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,SUPPORT_TotalGold_Diff,0.15079147400706297,0.15079147400706297,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_TotalGold_avg,-0.10667765665746931,0.10667765665746931,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_TotalGold_sum,-0.10667765665746815,0.10667765665746815,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,MIDDLE_TotalGold_Diff,0.10521992999438665,0.10521992999438665,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,BlueDragonKills,0.10476352839120551,0.10476352839120551,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,BOTTOM_kills_Diff,0.10337777250734434,0.10337777250734434,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_DragonKills,0.09657490449723755,0.09657490449723755,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_TotalGold_avg,0.0963864980054322,0.0963864980054322,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_TotalGold_sum,0.09638649800543113,0.09638649800543113,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,TOP_DmgTaken_Diff,0.09318065188519258,0.09318065188519258,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,JUNGLE_assists_Diff,0.08644580513991054,0.08644580513991054,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_deaths_sum,-0.08184631528625391,0.08184631528625391,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_deaths_avg,-0.08184631528624878,0.08184631528624878,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,RedDragonKills,-0.07478775337881502,0.07478775337881502,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,BOTTOM_TotalGold_Diff,0.07421099545716488,0.07421099545716488,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,BOTTOM_DmgDealt_Diff,0.07348709880229078,0.07348709880229078,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,JUNGLE_MinionsKilled_Diff,0.07012382125100289,0.07012382125100289,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,MIDDLE_kills_Diff,0.06945538308156736,0.06945538308156736,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,TOP_deaths_Diff,0.06312747718342748,0.06312747718342748,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_Lead_Signal_Count,-0.062286109778466305,0.062286109778466305,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_MinionsKilled_sum,-0.06172718836238686,0.06172718836238686,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_MinionsKilled_avg,-0.061727188362379004,0.061727188362379004,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,MIDDLE_DmgDealt_Diff,0.06020422832278301,0.06020422832278301,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,JUNGLE_deaths_Diff,-0.06017744653269162,0.06017744653269162,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_Lead_Signal_Count,-0.058328588956371115,0.058328588956371115,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,TOP_MinionsKilled_Diff,0.05604954785759924,0.05604954785759924,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_DmgDealt,0.055868759808544326,0.055868759808544326,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,JUNGLE_TotalGold_Diff,0.05583988657470981,0.05583988657470981,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_TowerKills,-0.05174259727273594,0.05174259727273594,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_MinionsKilled_sum,0.05170339783209264,0.05170339783209264,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_MinionsKilled_avg,0.05170339783208992,0.05170339783208992,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,TOP_DmgDealt_Diff,-0.050006067060469055,0.050006067060469055,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_deaths_sum,-0.04443744025542163,0.04443744025542163,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_deaths_avg,-0.044437440255415246,0.044437440255415246,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,BOTTOM_assists_Diff,-0.04280388282620762,0.04280388282620762,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Objective_Control_Index,0.04231680676918748,0.04231680676918748,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,BOTTOM_DmgTaken_Diff,-0.042138083651418974,0.042138083651418974,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,MIDDLE_deaths_Diff,0.03945384870159402,0.03945384870159402,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,BOTTOM_deaths_Diff,0.03779827836900532,0.03779827836900532,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_deaths,0.03620076428340907,0.03620076428340907,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,BlueTowerKills,-0.03571758650564166,0.03571758650564166,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,TOP_assists_Diff,-0.03566664318112106,0.03566664318112106,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_DmgTaken,0.03529485075331055,0.03529485075331055,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_GoldStd,0.03486519166158376,0.03486519166158376,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_KDA,0.03276634565933734,0.03276634565933734,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,SUPPORT_deaths_Diff,0.03220005883548562,0.03220005883548562,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,RedTowerKills,0.03146997978945595,0.03146997978945595,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_GoldStd,-0.03066446515941698,0.03066446515941698,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,SUPPORT_kills_Diff,0.03000557194579885,0.03000557194579885,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_KDA,0.02932016847179211,0.02932016847179211,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,SUPPORT_DmgTaken_Diff,-0.028806504095321844,0.028806504095321844,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,MIDDLE_MinionsKilled_Diff,-0.02695973568279023,0.02695973568279023,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_KDA,-0.026390657279391147,0.026390657279391147,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_DmgDealt_avg,0.024908514276171828,0.024908514276171828,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_DmgDealt_sum,0.024908514276164088,0.024908514276164088,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_Damage_per_Gold,-0.023170339711999825,0.023170339711999825,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_RiftHeraldKills,0.022368451401780908,0.022368451401780908,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,JUNGLE_DmgTaken_Diff,-0.02192495274827266,0.02192495274827266,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,BOTTOM_MinionsKilled_Diff,0.02162132280121782,0.02162132280121782,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Kill_Objective_Alignment,0.021409353538001864,0.021409353538001864,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,JUNGLE_DmgDealt_Diff,-0.021404194484788037,0.021404194484788037,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,BlueRiftHeraldKills,0.0210988690204527,0.0210988690204527,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_MaxGoldShare,0.02086935559887709,0.02086935559887709,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,SUPPORT_DmgDealt_Diff,0.020361184463421434,0.020361184463421434,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_Damage_per_Gold,0.020276117559801903,0.020276117559801903,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,RedRiftHeraldKills,-0.0190547985279754,0.0190547985279754,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Gold_Objective_Alignment,-0.01791630640615127,0.01791630640615127,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_DmgTaken_avg,0.0175945911994375,0.0175945911994375,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_DmgTaken_sum,0.01759459119943598,0.01759459119943598,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_GoldStd,0.01732761465697996,0.01732761465697996,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,TOP_TotalGold_Diff,-0.016841991982625044,0.016841991982625044,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_MaxGoldShare,0.016025768312838553,0.016025768312838553,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,MIDDLE_assists_Diff,-0.011662305175259735,0.011662305175259735,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_DmgDealt_sum,-0.011054039852554301,0.011054039852554301,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_DmgDealt_avg,-0.011054039852550726,0.011054039852550726,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,SUPPORT_MinionsKilled_Diff,-0.009640678160526826,0.009640678160526826,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,SUPPORT_assists_Diff,-0.008936642913668285,0.008936642913668285,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_assists,0.008552962731613326,0.008552962731613326,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_Damage_per_Gold,-0.008036821204020429,0.008036821204020429,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_DmgTaken_avg,-0.004864693777892139,0.004864693777892139,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_DmgTaken_sum,-0.004864693777890703,0.004864693777890703,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_assists_avg,0.0040101001606910975,0.0040101001606910975,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_assists_sum,0.004010100160690597,0.004010100160690597,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,MIDDLE_DmgTaken_Diff,0.00334781540173907,0.00334781540173907,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_assists_avg,-0.002564331372904098,0.002564331372904098,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_assists_sum,-0.0025643313729037612,0.0025643313729037612,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Lead_Signal_Balance,-0.0019120371230606575,0.0019120371230606575,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_MaxGoldShare,-0.0008981574010429399,0.0008981574010429399,Red-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_TurretDmgDealt_sum,0.0,0.0,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_TurretDmgDealt_sum,0.0,0.0,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_TurretDmgDealt_avg,0.0,0.0,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Blue_TurretDamage_per_Gold,0.0,0.0,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_TurretDmgDealt_avg,0.0,0.0,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_TurretDmgDealt,0.0,0.0,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_TurretDamage_per_Gold,0.0,0.0,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,RedBaronKills,0.0,0.0,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Diff_BaronKills,0.0,0.0,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,BlueBaronKills,0.0,0.0,Blue-favored
+LoL Core + Lane Matchups,LogisticRegression,Red_TurretDamage_per_Gold,0.0,0.0,Blue-favored
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_TotalGold,,14.489776788846767,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_MinionsKilled_sum,,11.937270037129771,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_MinionsKilled_avg,,5.5454340074699715,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_MinionsKilled,,3.956609143484401,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_MinionsKilled_avg,,3.5777548727380637,
+LoL Core + Lane Matchups,CatBoost_reduced_default,JUNGLE_deaths_Diff,,3.2762149181750524,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Lead_Signal_Balance,,2.9096022512051802,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_MinionsKilled_sum,,2.3486692903516406,
+LoL Core + Lane Matchups,CatBoost_reduced_default,BOTTOM_TotalGold_Diff,,2.2045334075560628,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_Lead_Signal_Count,,1.8885888828128823,
+LoL Core + Lane Matchups,CatBoost_reduced_default,RedDragonKills,,1.7369462511150628,
+LoL Core + Lane Matchups,CatBoost_reduced_default,BOTTOM_DmgTaken_Diff,,1.6887542613427124,
+LoL Core + Lane Matchups,CatBoost_reduced_default,MIDDLE_DmgDealt_Diff,,1.651800970541924,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_DragonKills,,1.4490229642501413,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_GoldStd,,1.420635139218533,
+LoL Core + Lane Matchups,CatBoost_reduced_default,SUPPORT_DmgTaken_Diff,,1.383391107663416,
+LoL Core + Lane Matchups,CatBoost_reduced_default,JUNGLE_TotalGold_Diff,,1.2239398481542767,
+LoL Core + Lane Matchups,CatBoost_reduced_default,BOTTOM_MinionsKilled_Diff,,1.1399069401618869,
+LoL Core + Lane Matchups,CatBoost_reduced_default,MIDDLE_MinionsKilled_Diff,,1.090197011262202,
+LoL Core + Lane Matchups,CatBoost_reduced_default,MIDDLE_TotalGold_Diff,,1.08565001953271,
+LoL Core + Lane Matchups,CatBoost_reduced_default,JUNGLE_kills_Diff,,1.0347431383187056,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_TotalGold_avg,,1.0318635407631778,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_deaths,,1.0141344737332376,
+LoL Core + Lane Matchups,CatBoost_reduced_default,TOP_DmgDealt_Diff,,0.9275338253572565,
+LoL Core + Lane Matchups,CatBoost_reduced_default,BOTTOM_DmgDealt_Diff,,0.9107075386941064,
+LoL Core + Lane Matchups,CatBoost_reduced_default,SUPPORT_DmgDealt_Diff,,0.9105100495000427,
+LoL Core + Lane Matchups,CatBoost_reduced_default,BlueDragonKills,,0.9035443469344293,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_GoldStd,,0.9019190681013254,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_DmgDealt_sum,,0.8900608269854187,
+LoL Core + Lane Matchups,CatBoost_reduced_default,BOTTOM_assists_Diff,,0.8341890577258005,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_KDA,,0.8275578985539485,
+LoL Core + Lane Matchups,CatBoost_reduced_default,RedKills,,0.8258948066777915,
+LoL Core + Lane Matchups,CatBoost_reduced_default,SUPPORT_MinionsKilled_Diff,,0.8152391227662233,
+LoL Core + Lane Matchups,CatBoost_reduced_default,MIDDLE_DmgTaken_Diff,,0.7898747277222596,
+LoL Core + Lane Matchups,CatBoost_reduced_default,SUPPORT_TotalGold_Diff,,0.7843234630015496,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_GoldStd,,0.7572394772732198,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Objective_Control_Index,,0.6720719837599213,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_TotalGold_sum,,0.6527430589630588,
+LoL Core + Lane Matchups,CatBoost_reduced_default,TOP_TotalGold_Diff,,0.6517876643443447,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_TotalGold_sum,,0.605904562652261,
+LoL Core + Lane Matchups,CatBoost_reduced_default,JUNGLE_DmgDealt_Diff,,0.5644818283579155,
+LoL Core + Lane Matchups,CatBoost_reduced_default,JUNGLE_assists_Diff,,0.5643041340283554,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_kills,,0.5469353213468665,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_MaxGoldShare,,0.5369356104713502,
+LoL Core + Lane Matchups,CatBoost_reduced_default,JUNGLE_DmgTaken_Diff,,0.5079274813808144,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_TeamKills,,0.5072541717898175,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_KDA,,0.5055401539252813,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Gold_Objective_Alignment,,0.48691827163449214,
+LoL Core + Lane Matchups,CatBoost_reduced_default,TOP_MinionsKilled_Diff,,0.48369867169028713,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_DmgDealt,,0.47446890735710057,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_MaxGoldShare,,0.4656000682446465,
+LoL Core + Lane Matchups,CatBoost_reduced_default,JUNGLE_MinionsKilled_Diff,,0.4507233567140121,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_Damage_per_Gold,,0.4444245930466863,
+LoL Core + Lane Matchups,CatBoost_reduced_default,TOP_kills_Diff,,0.41374189850066084,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_Lead_Signal_Count,,0.4078166225140243,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_Damage_per_Gold,,0.39451004042460736,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_DmgTaken,,0.3841449551630947,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_TowerKills,,0.37812687854210175,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_DmgDealt_avg,,0.3735945547484852,
+LoL Core + Lane Matchups,CatBoost_reduced_default,MIDDLE_assists_Diff,,0.3710195995677271,
+LoL Core + Lane Matchups,CatBoost_reduced_default,BlueRiftHeraldKills,,0.36613768462397805,
+LoL Core + Lane Matchups,CatBoost_reduced_default,TOP_DmgTaken_Diff,,0.35320195160608997,
+LoL Core + Lane Matchups,CatBoost_reduced_default,MIDDLE_kills_Diff,,0.35222644975981754,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_TotalGold_avg,,0.34463139655974323,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_MaxGoldShare,,0.333843047998173,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_KDA,,0.2993073848134521,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_DmgTaken_sum,,0.2914376017654543,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_Damage_per_Gold,,0.2848973955427307,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_assists_sum,,0.28085330278944154,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_assists_avg,,0.2779911474067984,
+LoL Core + Lane Matchups,CatBoost_reduced_default,BOTTOM_kills_Diff,,0.27715194671349913,
+LoL Core + Lane Matchups,CatBoost_reduced_default,MIDDLE_deaths_Diff,,0.2710258813832547,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Kill_Objective_Alignment,,0.2682584649335743,
+LoL Core + Lane Matchups,CatBoost_reduced_default,BOTTOM_deaths_Diff,,0.2645271689571101,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_deaths_sum,,0.2545913984883554,
+LoL Core + Lane Matchups,CatBoost_reduced_default,SUPPORT_deaths_Diff,,0.2542394690258017,
+LoL Core + Lane Matchups,CatBoost_reduced_default,RedRiftHeraldKills,,0.25271905076073764,
+LoL Core + Lane Matchups,CatBoost_reduced_default,SUPPORT_assists_Diff,,0.25263608543075083,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_DmgDealt_avg,,0.21614748780747237,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_DmgDealt_sum,,0.21214926747709437,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_RiftHeraldKills,,0.19456927761835185,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_assists_sum,,0.1902509286420351,
+LoL Core + Lane Matchups,CatBoost_reduced_default,TOP_assists_Diff,,0.18353453645354023,
+LoL Core + Lane Matchups,CatBoost_reduced_default,BlueTowerKills,,0.1818303022829714,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_deaths_avg,,0.16484596891956707,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_assists,,0.16266272866602835,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_DmgTaken_avg,,0.15832447128213328,
+LoL Core + Lane Matchups,CatBoost_reduced_default,BlueKills,,0.14691298765808106,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_DmgTaken_avg,,0.1357449064948254,
+LoL Core + Lane Matchups,CatBoost_reduced_default,TOP_deaths_Diff,,0.12012614132734649,
+LoL Core + Lane Matchups,CatBoost_reduced_default,SUPPORT_kills_Diff,,0.1119042167390473,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_assists_avg,,0.11115174724690148,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_deaths_avg,,0.07348247638700624,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_kills_sum,,0.06244031660174678,
+LoL Core + Lane Matchups,CatBoost_reduced_default,RedTowerKills,,0.06056555015135159,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_kills_avg,,0.05728544257368909,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_DmgTaken_sum,,0.051830875779153726,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_kills_avg,,0.04508750675857139,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_deaths_sum,,0.04053310184925472,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_kills_sum,,0.030235068436018062,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_TurretDmgDealt_sum,,0.0,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_TurretDmgDealt_sum,,0.0,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_TurretDmgDealt_avg,,0.0,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Blue_TurretDamage_per_Gold,,0.0,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_TurretDmgDealt_avg,,0.0,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_TurretDmgDealt,,0.0,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_TurretDamage_per_Gold,,0.0,
+LoL Core + Lane Matchups,CatBoost_reduced_default,RedBaronKills,,0.0,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Diff_BaronKills,,0.0,
+LoL Core + Lane Matchups,CatBoost_reduced_default,BlueBaronKills,,0.0,
+LoL Core + Lane Matchups,CatBoost_reduced_default,Red_TurretDamage_per_Gold,,0.0,
