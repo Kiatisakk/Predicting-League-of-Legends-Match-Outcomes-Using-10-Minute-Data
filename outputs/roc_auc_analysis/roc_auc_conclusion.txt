@@ -1,1 +1,1 @@
-Best ROC-AUC model in this ROC run: CatBoost with ROC-AUC=0.7993. AUC compares ranking quality across thresholds, while the threshold sweep shows operational trade-offs at specific decision cutoffs.
+Best ROC-AUC model in this ROC run: CatBoost with ROC-AUC=0.7990. AUC compares ranking quality across thresholds, while the threshold sweep shows operational trade-offs at specific decision cutoffs.
