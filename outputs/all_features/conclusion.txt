@@ -1,1 +1,1 @@
-LogisticRegression Test AUC=0.7971; Best Model=CatBoost; Best Model final Test AUC=0.7990; AUC gap=+0.0019; Best Model Accuracy=0.7164; Best Model F1=0.7142. All-features vs aggregate-only AUC delta=+0.0166.
+LogisticRegression Test AUC=0.7971; Best Model=CatBoost; Best Model final Test AUC=0.7993; AUC gap=+0.0022; Best Model Accuracy=0.7158; Best Model F1=0.7130. All-features vs aggregate-only AUC delta=+0.0168.

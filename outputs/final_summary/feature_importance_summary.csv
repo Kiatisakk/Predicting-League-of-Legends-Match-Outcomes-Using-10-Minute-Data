@@ -1,61 +1,61 @@
 feature,coefficient,importance,direction,importance_rank,model,feature_group,Experiment,raw_value,importance_type
-TotalGold_P8,-0.4993444845744926,0.4993444845744926,Red-favored,1,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
-TotalGold_P1,0.458955118027505,0.458955118027505,Blue-favored,2,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
-TotalGold_P4,0.4075640078242349,0.4075640078242349,Blue-favored,3,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
-TotalGold_P6,-0.3513567344161462,0.3513567344161462,Red-favored,4,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
-TotalGold_P3,0.3398590432772448,0.3398590432772448,Blue-favored,5,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
-TotalGold_P9,-0.314973044966795,0.314973044966795,Red-favored,6,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
-MinionsKilled_P7,-0.2415139764506394,0.2415139764506394,Red-favored,7,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
-TotalGold_P7,-0.2259059583668028,0.2259059583668028,Red-favored,8,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
-TotalGold_P5,0.2212022269874597,0.2212022269874597,Blue-favored,9,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
-TotalGold_P10,-0.2205837343508414,0.2205837343508414,Red-favored,10,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
-TotalGold_P2,0.2146775781219454,0.2146775781219454,Blue-favored,11,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
-MinionsKilled_P2,0.1963355539642501,0.1963355539642501,Blue-favored,12,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
-RedKills,,1.7015851313344406,Blue-favored,1,LogisticRegression,raw_objective_counts,04 Aggregate-only LogisticRegression,1.7015851313344406,absolute_logistic_coefficient
-Diff_Kills,,0.9586601918019964,Red-favored,2,LogisticRegression,difference_features,04 Aggregate-only LogisticRegression,-0.9586601918019964,absolute_logistic_coefficient
-BlueKills,,0.9281440572690272,Blue-favored,3,LogisticRegression,raw_objective_counts,04 Aggregate-only LogisticRegression,0.9281440572690272,absolute_logistic_coefficient
-Red_kills_sum,,0.7881949839997563,Red-favored,4,LogisticRegression,team_aggregate_features,04 Aggregate-only LogisticRegression,-0.7881949839997563,absolute_logistic_coefficient
-Red_kills_avg,,0.788194983999756,Red-favored,5,LogisticRegression,team_aggregate_features,04 Aggregate-only LogisticRegression,-0.788194983999756,absolute_logistic_coefficient
-Diff_kills,,0.5375665356347425,Blue-favored,6,LogisticRegression,difference_features,04 Aggregate-only LogisticRegression,0.5375665356347425,absolute_logistic_coefficient
-Diff_TotalGold,,0.4973773138609318,Blue-favored,7,LogisticRegression,difference_features,04 Aggregate-only LogisticRegression,0.4973773138609318,absolute_logistic_coefficient
-Diff_MinionsKilled,,0.1934744290629948,Blue-favored,8,LogisticRegression,difference_features,04 Aggregate-only LogisticRegression,0.1934744290629948,absolute_logistic_coefficient
-Blue_kills_avg,,0.1760298142193188,Red-favored,9,LogisticRegression,team_aggregate_features,04 Aggregate-only LogisticRegression,-0.1760298142193188,absolute_logistic_coefficient
-Blue_kills_sum,,0.1760298142192908,Red-favored,10,LogisticRegression,team_aggregate_features,04 Aggregate-only LogisticRegression,-0.1760298142192908,absolute_logistic_coefficient
-Red_TotalGold_avg,,0.1141558880634851,Red-favored,11,LogisticRegression,team_aggregate_features,04 Aggregate-only LogisticRegression,-0.1141558880634851,absolute_logistic_coefficient
-Red_TotalGold_sum,,0.1141558880634803,Red-favored,12,LogisticRegression,team_aggregate_features,04 Aggregate-only LogisticRegression,-0.1141558880634803,absolute_logistic_coefficient
-Diff_TotalGold,,19.639549532280853,higher importance,1,CatBoost,difference_features,04 Aggregate-only Best (CatBoost),19.639549532280853,tree_feature_importance
-Red_MinionsKilled_sum,,8.738996871940701,higher importance,2,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),8.738996871940701,tree_feature_importance
-Red_MinionsKilled_avg,,8.480657607995674,higher importance,3,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),8.480657607995674,tree_feature_importance
-Blue_MinionsKilled_avg,,6.975754469854214,higher importance,4,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),6.975754469854214,tree_feature_importance
-Blue_MinionsKilled_sum,,5.84750496906761,higher importance,5,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),5.84750496906761,tree_feature_importance
-Diff_MinionsKilled,,5.758918585162668,higher importance,6,CatBoost,difference_features,04 Aggregate-only Best (CatBoost),5.758918585162668,tree_feature_importance
-Red_GoldStd,,3.0602380944528464,higher importance,7,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),3.0602380944528464,tree_feature_importance
-Diff_DragonKills,,2.987939184587289,higher importance,8,CatBoost,difference_features,04 Aggregate-only Best (CatBoost),2.987939184587289,tree_feature_importance
-RedDragonKills,,2.919703099482323,higher importance,9,CatBoost,raw_objective_counts,04 Aggregate-only Best (CatBoost),2.919703099482323,tree_feature_importance
-Diff_Kills,,2.8179652943121742,higher importance,10,CatBoost,difference_features,04 Aggregate-only Best (CatBoost),2.8179652943121742,tree_feature_importance
-Blue_GoldStd,,2.778333692791768,higher importance,11,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),2.778333692791768,tree_feature_importance
-RedKills,,1.7608041369066254,higher importance,12,CatBoost,raw_objective_counts,04 Aggregate-only Best (CatBoost),1.7608041369066254,tree_feature_importance
-Diff_TotalGold,,0.3723068508772621,Blue-favored,1,LogisticRegression,aggregate_difference,05 All-features LogisticRegression,0.3723068508772621,absolute_logistic_coefficient
-Diff_DmgDealt,,0.2170997346531365,Blue-favored,2,LogisticRegression,aggregate_difference,05 All-features LogisticRegression,0.2170997346531365,absolute_logistic_coefficient
-Diff_MinionsKilled,,0.1997941817589034,Blue-favored,3,LogisticRegression,aggregate_difference,05 All-features LogisticRegression,0.1997941817589034,absolute_logistic_coefficient
-TotalGold_P1,,0.1895838636807853,Blue-favored,4,LogisticRegression,player_level_stats,05 All-features LogisticRegression,0.1895838636807853,absolute_logistic_coefficient
-TotalGold_P8,,0.1588517832357852,Red-favored,5,LogisticRegression,player_level_stats,05 All-features LogisticRegression,-0.1588517832357852,absolute_logistic_coefficient
-MinionsKilled_P7,,0.1389894676766874,Red-favored,6,LogisticRegression,player_level_stats,05 All-features LogisticRegression,-0.1389894676766874,absolute_logistic_coefficient
-MinionsKilled_P2,,0.1367282460813653,Blue-favored,7,LogisticRegression,player_level_stats,05 All-features LogisticRegression,0.1367282460813653,absolute_logistic_coefficient
-TotalGold_P4,,0.1247446698827798,Blue-favored,8,LogisticRegression,player_level_stats,05 All-features LogisticRegression,0.1247446698827798,absolute_logistic_coefficient
-BlueChamp_81,,0.1212748625590444,Red-favored,9,LogisticRegression,champion_composition,05 All-features LogisticRegression,-0.1212748625590444,absolute_logistic_coefficient
-RedChamp_81,,0.1132209699601813,Blue-favored,10,LogisticRegression,champion_composition,05 All-features LogisticRegression,0.1132209699601813,absolute_logistic_coefficient
-RedChamp_51,,0.1121079957768617,Blue-favored,11,LogisticRegression,champion_composition,05 All-features LogisticRegression,0.1121079957768617,absolute_logistic_coefficient
-Diff_DragonKills,,0.1074470767167886,Blue-favored,12,LogisticRegression,aggregate_difference,05 All-features LogisticRegression,0.1074470767167886,absolute_logistic_coefficient
-Diff_TotalGold,,18.13916169857414,higher importance,1,CatBoost,aggregate_difference,05 All-features Best (CatBoost),18.13916169857414,tree_feature_importance
-PrimaryKeyStone_P6_0,,4.862220574537697,higher importance,2,CatBoost,setup_runes_spells,05 All-features Best (CatBoost),4.862220574537697,tree_feature_importance
-Lane_P5_JUNGLE,,3.8848859818075776,higher importance,3,CatBoost,lane_position,05 All-features Best (CatBoost),3.8848859818075776,tree_feature_importance
-PrimaryKeyStone_P9_0,,3.7983330326987694,higher importance,4,CatBoost,setup_runes_spells,05 All-features Best (CatBoost),3.7983330326987694,tree_feature_importance
-PrimaryKeyStone_P7_0,,3.650786288441096,higher importance,5,CatBoost,setup_runes_spells,05 All-features Best (CatBoost),3.650786288441096,tree_feature_importance
-Red_MinionsKilled_sum,,2.9982623520840086,higher importance,6,CatBoost,team_aggregate,05 All-features Best (CatBoost),2.9982623520840086,tree_feature_importance
-Diff_MinionsKilled,,2.530224617579014,higher importance,7,CatBoost,aggregate_difference,05 All-features Best (CatBoost),2.530224617579014,tree_feature_importance
-Lane_P4_JUNGLE,,2.35530337421711,higher importance,8,CatBoost,lane_position,05 All-features Best (CatBoost),2.35530337421711,tree_feature_importance
-Red_MinionsKilled_avg,,1.7018640602099884,higher importance,9,CatBoost,team_aggregate,05 All-features Best (CatBoost),1.7018640602099884,tree_feature_importance
-RedDragonKills,,1.421402095416714,higher importance,10,CatBoost,objective_counts,05 All-features Best (CatBoost),1.421402095416714,tree_feature_importance
-Diff_DragonKills,,1.2754975746741304,higher importance,11,CatBoost,aggregate_difference,05 All-features Best (CatBoost),1.2754975746741304,tree_feature_importance
-Lane_P8_JUNGLE,,1.1998969800046553,higher importance,12,CatBoost,lane_position,05 All-features Best (CatBoost),1.1998969800046553,tree_feature_importance
+TotalGold_P8,-0.4993444845741547,0.4993444845741547,Red-favored,1,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
+TotalGold_P1,0.4589551180269698,0.4589551180269698,Blue-favored,2,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
+TotalGold_P4,0.4075640078240543,0.4075640078240543,Blue-favored,3,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
+TotalGold_P6,-0.3513567344158033,0.3513567344158033,Red-favored,4,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
+TotalGold_P3,0.3398590432770885,0.3398590432770885,Blue-favored,5,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
+TotalGold_P9,-0.3149730449667651,0.3149730449667651,Red-favored,6,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
+MinionsKilled_P7,-0.2415139764502715,0.2415139764502715,Red-favored,7,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
+TotalGold_P7,-0.2259059583671683,0.2259059583671683,Red-favored,8,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
+TotalGold_P5,0.221202226987456,0.221202226987456,Blue-favored,9,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
+TotalGold_P10,-0.2205837343507325,0.2205837343507325,Red-favored,10,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
+TotalGold_P2,0.2146775781222569,0.2146775781222569,Blue-favored,11,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
+MinionsKilled_P2,0.1963355539640646,0.1963355539640646,Blue-favored,12,LogisticRegression,raw_encoded_features,03 Baseline LogisticRegression,,
+RedKills,,1.7015851121428367,Blue-favored,1,LogisticRegression,raw_objective_counts,04 Aggregate-only LogisticRegression,1.7015851121428367,absolute_logistic_coefficient
+Diff_Kills,,0.9586601931856426,Red-favored,2,LogisticRegression,difference_features,04 Aggregate-only LogisticRegression,-0.9586601931856426,absolute_logistic_coefficient
+BlueKills,,0.92814403172405,Blue-favored,3,LogisticRegression,raw_objective_counts,04 Aggregate-only LogisticRegression,0.92814403172405,absolute_logistic_coefficient
+Red_kills_avg,,0.7881949690445218,Red-favored,4,LogisticRegression,team_aggregate_features,04 Aggregate-only LogisticRegression,-0.7881949690445218,absolute_logistic_coefficient
+Red_kills_sum,,0.7881949690445216,Red-favored,5,LogisticRegression,team_aggregate_features,04 Aggregate-only LogisticRegression,-0.7881949690445216,absolute_logistic_coefficient
+Diff_kills,,0.5375665307885896,Blue-favored,6,LogisticRegression,difference_features,04 Aggregate-only LogisticRegression,0.5375665307885896,absolute_logistic_coefficient
+Diff_TotalGold,,0.497377307496439,Blue-favored,7,LogisticRegression,difference_features,04 Aggregate-only LogisticRegression,0.497377307496439,absolute_logistic_coefficient
+Diff_MinionsKilled,,0.1934744300772461,Blue-favored,8,LogisticRegression,difference_features,04 Aggregate-only LogisticRegression,0.1934744300772461,absolute_logistic_coefficient
+Blue_kills_avg,,0.1760298050572082,Red-favored,9,LogisticRegression,team_aggregate_features,04 Aggregate-only LogisticRegression,-0.1760298050572082,absolute_logistic_coefficient
+Blue_kills_sum,,0.1760298050572036,Red-favored,10,LogisticRegression,team_aggregate_features,04 Aggregate-only LogisticRegression,-0.1760298050572036,absolute_logistic_coefficient
+Red_TotalGold_avg,,0.1141558859106606,Red-favored,11,LogisticRegression,team_aggregate_features,04 Aggregate-only LogisticRegression,-0.1141558859106606,absolute_logistic_coefficient
+Red_TotalGold_sum,,0.1141558859106597,Red-favored,12,LogisticRegression,team_aggregate_features,04 Aggregate-only LogisticRegression,-0.1141558859106597,absolute_logistic_coefficient
+Diff_TotalGold,,20.627030961232265,higher importance,1,CatBoost,difference_features,04 Aggregate-only Best (CatBoost),20.627030961232265,tree_feature_importance
+Red_MinionsKilled_avg,,11.67921480426658,higher importance,2,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),11.67921480426658,tree_feature_importance
+Red_MinionsKilled_sum,,8.660179919201694,higher importance,3,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),8.660179919201694,tree_feature_importance
+Blue_MinionsKilled_avg,,8.012841644936827,higher importance,4,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),8.012841644936827,tree_feature_importance
+Diff_MinionsKilled,,6.021652482423309,higher importance,5,CatBoost,difference_features,04 Aggregate-only Best (CatBoost),6.021652482423309,tree_feature_importance
+Blue_MinionsKilled_sum,,4.299030555612522,higher importance,6,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),4.299030555612522,tree_feature_importance
+Blue_GoldStd,,3.6684186486551273,higher importance,7,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),3.6684186486551273,tree_feature_importance
+Red_GoldStd,,3.498820498442988,higher importance,8,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),3.498820498442988,tree_feature_importance
+Diff_DragonKills,,3.3944665730993933,higher importance,9,CatBoost,difference_features,04 Aggregate-only Best (CatBoost),3.3944665730993933,tree_feature_importance
+RedDragonKills,,2.888786204644132,higher importance,10,CatBoost,raw_objective_counts,04 Aggregate-only Best (CatBoost),2.888786204644132,tree_feature_importance
+Diff_DmgDealt,,2.0529408086383034,higher importance,11,CatBoost,difference_features,04 Aggregate-only Best (CatBoost),2.0529408086383034,tree_feature_importance
+Red_KDA,,1.5791646882108563,higher importance,12,CatBoost,team_aggregate_features,04 Aggregate-only Best (CatBoost),1.5791646882108563,tree_feature_importance
+Diff_TotalGold,,0.372306850880944,Blue-favored,1,LogisticRegression,aggregate_difference,05 All-features LogisticRegression,0.372306850880944,absolute_logistic_coefficient
+Diff_DmgDealt,,0.2170997346514303,Blue-favored,2,LogisticRegression,aggregate_difference,05 All-features LogisticRegression,0.2170997346514303,absolute_logistic_coefficient
+Diff_MinionsKilled,,0.1997941817569469,Blue-favored,3,LogisticRegression,aggregate_difference,05 All-features LogisticRegression,0.1997941817569469,absolute_logistic_coefficient
+TotalGold_P1,,0.1895838636709448,Blue-favored,4,LogisticRegression,player_level_stats,05 All-features LogisticRegression,0.1895838636709448,absolute_logistic_coefficient
+TotalGold_P8,,0.1588517832296534,Red-favored,5,LogisticRegression,player_level_stats,05 All-features LogisticRegression,-0.1588517832296534,absolute_logistic_coefficient
+MinionsKilled_P7,,0.1389894676754291,Red-favored,6,LogisticRegression,player_level_stats,05 All-features LogisticRegression,-0.1389894676754291,absolute_logistic_coefficient
+MinionsKilled_P2,,0.1367282460774407,Blue-favored,7,LogisticRegression,player_level_stats,05 All-features LogisticRegression,0.1367282460774407,absolute_logistic_coefficient
+TotalGold_P4,,0.1247446698815369,Blue-favored,8,LogisticRegression,player_level_stats,05 All-features LogisticRegression,0.1247446698815369,absolute_logistic_coefficient
+BlueChamp_81,,0.1212748625590823,Red-favored,9,LogisticRegression,champion_composition,05 All-features LogisticRegression,-0.1212748625590823,absolute_logistic_coefficient
+RedChamp_81,,0.1132209699600927,Blue-favored,10,LogisticRegression,champion_composition,05 All-features LogisticRegression,0.1132209699600927,absolute_logistic_coefficient
+RedChamp_51,,0.1121079957761281,Blue-favored,11,LogisticRegression,champion_composition,05 All-features LogisticRegression,0.1121079957761281,absolute_logistic_coefficient
+Diff_DragonKills,,0.1074470767178654,Blue-favored,12,LogisticRegression,aggregate_difference,05 All-features LogisticRegression,0.1074470767178654,absolute_logistic_coefficient
+Diff_TotalGold,,19.0377984209578,higher importance,1,CatBoost,aggregate_difference,05 All-features Best (CatBoost),19.0377984209578,tree_feature_importance
+PrimaryKeyStone_P5_0,,5.202324337726206,higher importance,2,CatBoost,setup_runes_spells,05 All-features Best (CatBoost),5.202324337726206,tree_feature_importance
+PrimaryKeyStone_P6_0,,3.725204297941092,higher importance,3,CatBoost,setup_runes_spells,05 All-features Best (CatBoost),3.725204297941092,tree_feature_importance
+Lane_P4_JUNGLE,,3.367508414941835,higher importance,4,CatBoost,lane_position,05 All-features Best (CatBoost),3.367508414941835,tree_feature_importance
+Lane_P5_JUNGLE,,3.123538456508667,higher importance,5,CatBoost,lane_position,05 All-features Best (CatBoost),3.123538456508667,tree_feature_importance
+PrimaryKeyStone_P3_0,,2.939767786863135,higher importance,6,CatBoost,setup_runes_spells,05 All-features Best (CatBoost),2.939767786863135,tree_feature_importance
+Diff_MinionsKilled,,2.5467710306535207,higher importance,7,CatBoost,aggregate_difference,05 All-features Best (CatBoost),2.5467710306535207,tree_feature_importance
+RedDragonKills,,2.4129697435280315,higher importance,8,CatBoost,objective_counts,05 All-features Best (CatBoost),2.4129697435280315,tree_feature_importance
+MinionsKilled_P8,,2.210134505557728,higher importance,9,CatBoost,player_level_stats,05 All-features Best (CatBoost),2.210134505557728,tree_feature_importance
+MinionsKilled_P7,,1.6288284930498615,higher importance,10,CatBoost,player_level_stats,05 All-features Best (CatBoost),1.6288284930498615,tree_feature_importance
+Lane_P3_JUNGLE,,1.234512496616467,higher importance,11,CatBoost,lane_position,05 All-features Best (CatBoost),1.234512496616467,tree_feature_importance
+Red_MinionsKilled_avg,,1.2111187199705122,higher importance,12,CatBoost,team_aggregate,05 All-features Best (CatBoost),1.2111187199705122,tree_feature_importance

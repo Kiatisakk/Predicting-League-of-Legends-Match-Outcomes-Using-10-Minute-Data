@@ -1,4 +1,3 @@
 Best LoL-aware reduced model: LoL Core + Lane Matchups with CatBoost_reduced_default (111 features), Test AUC=0.7835.
-Gap vs full CatBoost: -0.0158 AUC.
-Gap vs full LogisticRegression: -0.0136 AUC.
+Gap vs full CatBoost: -0.0157 AUC.
 Conclusion: LoL-aware reduction keeps the model interpretable and compact, but performance drops compared with full all-features; this suggests champion/setup/raw high-dimensional signals still add predictive value.

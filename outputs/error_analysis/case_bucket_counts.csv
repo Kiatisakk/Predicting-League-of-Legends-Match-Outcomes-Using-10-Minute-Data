@@ -1,5 +1,5 @@
 case_bucket,count,share
-both_correct,9201,0.6711159737417943
-both_wrong,3258,0.23763676148796498
-linear_correct_tree_wrong,635,0.04631655725747629
-linear_wrong_tree_correct,616,0.04493070751276441
+both_correct,9205,0.6714077315827863
+both_wrong,3239,0.2362509117432531
+linear_wrong_tree_correct,635,0.04631655725747629
+linear_correct_tree_wrong,631,0.04602479941648432

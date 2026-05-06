@@ -1,4 +1,4 @@
 Comparison,From,To,Delta_Test_AUC,Delta_Test_Accuracy,Delta_Test_F1
-Aggregate-only best vs baseline,03 Baseline,04 Aggregate-only,-0.0005670231829808525,-0.0021152443471917914,-0.00334920899648683
-All-features best vs aggregate-only best,04 Aggregate-only,05 All features,0.016646306749987017,0.012910284463894972,0.013729151580608945
-All-features best vs baseline,03 Baseline,05 All features,0.016079283567006164,0.01079504011670318,0.010379942584122115
+Aggregate-only best vs baseline,03 Baseline,04 Aggregate-only,-0.0006482940231309353,-0.0016046681254557882,-0.0030318132073764437
+All-features best vs aggregate-only best,04 Aggregate-only,05 All features,0.016758498388968812,0.010065645514223176,0.010455828203051576
+All-features best vs baseline,03 Baseline,05 All features,0.016110204365837877,0.008460977388767388,0.007424014995675132
